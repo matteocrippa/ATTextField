@@ -1,0 +1,16 @@
+PODS:
+  - ATTextField (0.1.0)
+
+DEPENDENCIES:
+  - ATTextField (from `../`)
+
+EXTERNAL SOURCES:
+  ATTextField:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ATTextField: 62735a295930ab5c4babbc15abd1333aa4921c2b
+
+PODFILE CHECKSUM: 36c56967478b0f618dade04d91ac26d42652483e
+
+COCOAPODS: 1.2.1
