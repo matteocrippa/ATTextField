@@ -25,7 +25,7 @@ A simple implementation of custom UITextFileld with head, error labels and simpl
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tikhonov' => 'alexander.tikhonov@altarix.ru' }
-  s.source           = { :git => 'https://github.com/tikhonov/ATTextField.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/TikhonovAlexander/ATTextField.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

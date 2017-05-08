@@ -1,0 +1,10 @@
+framework module ATTextField {
+  umbrella header "ATTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module ATTextField.__Swift {
+    exclude header "ATTextField-Swift.h"
+}
