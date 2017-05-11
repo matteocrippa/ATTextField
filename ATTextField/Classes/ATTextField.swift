@@ -29,9 +29,19 @@ open class ATTextField: UITextField {
         return font!.lineHeight.rounded(.up)
     }
     
-    open var shouldShowAlertWhenInvalid = true
-    open var shouldHideAlertWhenTextFieldDidEndEditingPassValidation = true
-    open var shouldHideHeadWhenTextFieldIsEmpty: Bool = true
+    @IBInspectable var showAlertWhenInvalid: Bool = true {
+        didSet {
+            updateAlertLabelProperties()
+        }
+    }
+    
+    @IBInspectable open var hideAlertWhenDidEndEditingPassValidation: Bool = true
+    
+    @IBInspectable var hideHeadWhenTextFieldIsEmpty: Bool = false {
+        didSet {
+            updateHeadLabelProperties()
+        }
+    }
     
     // MARK: - @IBInspectables
     
@@ -99,16 +109,29 @@ open class ATTextField: UITextField {
         addHeadLabel()
         addBaseLineLayer()
         addAlertLabel()
+        stylizeTextField()
     }
     
     // MARK: - Overriding
     
     override open func layoutSubviews() {
+        updateBounds()
         layoutHeadLabel()
         updateTextFieldAreaFrame()
         layoutBaseLine()
         layoutAlertLabel()
         super.layoutSubviews()
+    }
+    
+    func updateBounds() {
+        if let headText = headLabel.text, headText.isEmpty == false {
+            headLabel.sizeToFit()
+        }
+        if let alertText = alertLabel.text, alertText.isEmpty == false {
+            alertLabel.sizeToFit()
+        }
+        
+        bounds = CGRect(origin: .zero, size: intrinsicContentSize)
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -148,14 +171,12 @@ open class ATTextField: UITextField {
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         alertLabel.alpha = 1.0
+        borderStyle = .none
     }
     
     // MARK: - Layout subviews
     
     private func layoutHeadLabel() {
-        if let text = headLabel.text, text.isEmpty == false {
-            headLabel.sizeToFit()
-        }
         let x = headLabelPadding.x
         let y = headLabelPadding.y
         let width = bounds.width - x
@@ -168,7 +189,6 @@ open class ATTextField: UITextField {
     }
     
     private func layoutAlertLabel() {
-        alertLabel.sizeToFit()
         alertLabel.frame = frameForNextView(of: baseLineLayer.frame, withHeight: alertLabel.font.lineHeight, withPadding: alertLabelPadding)
     }
     
@@ -208,12 +228,12 @@ open class ATTextField: UITextField {
     }
     
     @objc private func textFieldDidEndEditing() {
-        if shouldHideHeadWhenTextFieldIsEmpty && (self.text == nil || text!.isEmpty) {
+        if hideHeadWhenTextFieldIsEmpty && (self.text == nil || text!.isEmpty) {
             hide(view: headLabel, withAnimation: true)
         }
-        if shouldHideAlertWhenTextFieldDidEndEditingPassValidation {
-            let resuslt = validate(forceExit: true)
-            switch resuslt {
+        if hideAlertWhenDidEndEditingPassValidation {
+            let result = validate(forceExit: true)
+            switch result {
             case .valid?:
                 hide(view: alertLabel, withAnimation: true)
             default:
@@ -229,8 +249,9 @@ open class ATTextField: UITextField {
         return validator.isValid(forceExit: forceExit)
     }
     
+    @discardableResult
     open func validate(withAnimation animation: Bool) -> ATValidatorResult?  {
-        guard let result = validate(forceExit: true), shouldShowAlertWhenInvalid else { return nil }
+        guard let result = validate(forceExit: true), showAlertWhenInvalid else { return nil }
         switch result {
         case .valid:
             hideAlert(withAnimation: animation)
@@ -241,14 +262,13 @@ open class ATTextField: UITextField {
             let text = criterias.first?.error?.localizedDescription ?? ""
             showAlert(withText: text, withAnimation: animation)
         }
-        setNeedsLayout()
         return result
     }
     
     // MARK: - Animation
     
     open func showAlert(withText text: String, withAnimation animation: Bool = false) {
-        alertLabel.text = text
+        alertText = text
         if animation == false {
             alertLabel.alpha = 1.0
             self.baseLineLayer.backgroundColor = alertLabel.textColor.cgColor
@@ -311,9 +331,13 @@ open class ATTextField: UITextField {
         addSubview(alertLabel)
     }
     
+    private func stylizeTextField() {
+        borderStyle = .none
+    }
+    
     private func configureVisibilityHeadLabel() {
         if let text = text {
-            if text.isEmpty, shouldHideHeadWhenTextFieldIsEmpty {
+            if text.isEmpty, hideHeadWhenTextFieldIsEmpty {
                 hide(view: headLabel, withAnimation: false)
             } else {
                 show(view: headLabel, withAnimation: false)
@@ -334,11 +358,16 @@ open class ATTextField: UITextField {
         default:
             break
         }
+        if hideHeadWhenTextFieldIsEmpty, hasText == false {
+            hide(view: headLabel, withAnimation: false)
+        }
+        setNeedsLayout()
     }
     
     private func updateBaseLineProperties() {
         baseLineLayer.backgroundColor = baseColor.cgColor
         baseLineLayer.cornerRadius = baseCornerRadius
+        setNeedsLayout()
     }
     
     private func updateAlertLabelProperties() {
@@ -350,5 +379,9 @@ open class ATTextField: UITextField {
         default:
             break
         }
+        if showAlertWhenInvalid, let validate = validate(forceExit: true), validate.boolValue == false {
+            show(view: alertLabel, withAnimation: false)
+        }
+        setNeedsLayout()
     }
 }
