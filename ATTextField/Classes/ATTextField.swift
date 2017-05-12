@@ -29,7 +29,7 @@ open class ATTextField: UITextField {
         return font!.lineHeight.rounded(.up)
     }
     
-    @IBInspectable var showAlertWhenInvalid: Bool = true {
+    @IBInspectable open var showAlertWhenInvalid: Bool = true {
         didSet {
             updateAlertLabelProperties()
         }
@@ -37,7 +37,7 @@ open class ATTextField: UITextField {
     
     @IBInspectable open var hideAlertWhenDidEndEditingPassValidation: Bool = true
     
-    @IBInspectable var hideHeadWhenTextFieldIsEmpty: Bool = false {
+    @IBInspectable open var hideHeadWhenTextFieldIsEmpty: Bool = false {
         didSet {
             updateHeadLabelProperties()
         }
@@ -45,49 +45,49 @@ open class ATTextField: UITextField {
     
     // MARK: - @IBInspectables
     
-    @IBInspectable var headText: String? = "Head" {
+    @IBInspectable open var headText: String? = "Head" {
         didSet {
             updateHeadLabelProperties()
         }
     }
     
-    @IBInspectable var headColor: UIColor = .black {
+    @IBInspectable open var headColor: UIColor = .black {
         didSet {
             updateHeadLabelProperties()
         }
     }
     
-    @IBInspectable var headTextAlignment: Int = 0 {
+    @IBInspectable open var headTextAlignment: Int = 0 {
         didSet {
             updateHeadLabelProperties()
         }
     }
     
-    @IBInspectable var baseColor: UIColor = .black  {
+    @IBInspectable open var baseColor: UIColor = .black  {
         didSet {
             updateBaseLineProperties()
         }
     }
     
-    @IBInspectable var baseCornerRadius: CGFloat = 1.0  {
+    @IBInspectable open var baseCornerRadius: CGFloat = 1.0  {
         didSet {
             updateBaseLineProperties()
         }
     }
     
-    @IBInspectable var alertText: String? = "Alert" {
+    @IBInspectable open var alertText: String? = "Alert" {
         didSet {
             updateAlertLabelProperties()
         }
     }
     
-    @IBInspectable var alertColor: UIColor = .red  {
+    @IBInspectable open var alertColor: UIColor = .red  {
         didSet {
             updateAlertLabelProperties()
         }
     }
     
-    @IBInspectable var alertTextAlignment: Int = 0 {
+    @IBInspectable open var alertTextAlignment: Int = 0 {
         didSet {
             updateAlertLabelProperties()
         }
@@ -115,7 +115,6 @@ open class ATTextField: UITextField {
     // MARK: - Overriding
     
     override open func layoutSubviews() {
-        updateBounds()
         layoutHeadLabel()
         updateTextFieldAreaFrame()
         layoutBaseLine()
@@ -123,15 +122,13 @@ open class ATTextField: UITextField {
         super.layoutSubviews()
     }
     
-    func updateBounds() {
+    func sizeToFitLabels() {
         if let headText = headLabel.text, headText.isEmpty == false {
             headLabel.sizeToFit()
         }
         if let alertText = alertLabel.text, alertText.isEmpty == false {
             alertLabel.sizeToFit()
         }
-        
-        bounds = CGRect(origin: .zero, size: intrinsicContentSize)
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -235,7 +232,7 @@ open class ATTextField: UITextField {
             let result = validate(forceExit: true)
             switch result {
             case .valid?:
-                hide(view: alertLabel, withAnimation: true)
+                hideAlert(withAnimation: true)
             default:
                 break
             }
@@ -361,12 +358,16 @@ open class ATTextField: UITextField {
         if hideHeadWhenTextFieldIsEmpty, hasText == false {
             hide(view: headLabel, withAnimation: false)
         }
+        sizeToFitLabels()
+        invalidateIntrinsicContentSize()
         setNeedsLayout()
     }
     
     private func updateBaseLineProperties() {
         baseLineLayer.backgroundColor = baseColor.cgColor
         baseLineLayer.cornerRadius = baseCornerRadius
+        sizeToFitLabels()
+        invalidateIntrinsicContentSize()
         setNeedsLayout()
     }
     
@@ -382,6 +383,8 @@ open class ATTextField: UITextField {
         if showAlertWhenInvalid, let validate = validate(forceExit: true), validate.boolValue == false {
             show(view: alertLabel, withAnimation: false)
         }
+        sizeToFitLabels()
+        invalidateIntrinsicContentSize()
         setNeedsLayout()
     }
 }

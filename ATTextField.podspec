@@ -22,7 +22,7 @@ A simple implementation of custom UITextFileld with head, error labels and simpl
                        DESC
 
   s.homepage         = 'https://github.com/TikhonovAlexander/ATTextField'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'pic/example.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tikhonov' => 'alexander.tikhonov@altarix.ru' }
   s.source           = { :git => 'https://github.com/TikhonovAlexander/ATTextField.git', :tag => s.version.to_s }
