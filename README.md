@@ -9,6 +9,11 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+<p align="center">
+<img src="pic/example.gif" style="max-height: 4480px;" alt="Example using ATTextField">
+<br>
+</p>
+
 ## Requirements
 
 ## Installation
