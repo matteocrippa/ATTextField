@@ -21,15 +21,6 @@ class ProgViewController: UIViewController {
         // create ATTextField
         createTextField()
         
-        // configure rules for validation
-        var emailCriteria = ATEmptyCriteria()
-        emailCriteria.textField = emailTextField
-        emailTextField.validator = ATValidator(criterias: [emailCriteria])
-        
-        var passwordCriteria = ATEmptyCriteria()
-        passwordCriteria.textField = passwordTextField
-        passwordTextField.validator = ATValidator(criterias: [passwordCriteria])
-        
         
         // for hiding keyboard
         addGestureRecognizer()
@@ -41,8 +32,7 @@ class ProgViewController: UIViewController {
     }
     
     @objc func loginButtonTapped(_ sender: Any) {
-        emailTextField.validate(withAnimation: true)
-        passwordTextField.validate(withAnimation: true)
+        emailTextField.showAlert(withText: "Alert message", withAnimation: true)
     }
     
     @objc private func hideKeyboard(gesture: UIGestureRecognizer?) {
@@ -68,7 +58,7 @@ class ProgViewController: UIViewController {
             NSFontAttributeName : UIFont.defaultFont(ofSize: 16.0, for: .medium)
         ]
         emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: placeholderAttributes)
-        emailTextField.baseColor = .pallette6
+        emailTextField.baseLineColor = .pallette6
         emailTextField.alertColor = .pallette7
         emailTextField.alertLabel.font = UIFont.defaultFont(ofSize: 12.0, for: .medium)
         emailTextField.font = UIFont.defaultFont(ofSize: 16.0, for: .medium)
@@ -76,10 +66,6 @@ class ProgViewController: UIViewController {
         emailTextField.keyboardType = .emailAddress
         emailTextField.returnKeyType = .next
         emailTextField.autocorrectionType = .no
-        emailTextField.baseLinePadding = CGPoint(x: 0, y: 10.0)
-        emailTextField.textFieldAreaPadding = CGPoint(x: 0, y: 10.0)
-        emailTextField.alertLabelPadding = CGPoint(x: 0, y: 5.0)
-        emailTextField.hideAlertWhenDidEndEditingPassValidation = true
         emailTextField.hideHeadWhenTextFieldIsEmpty = true
         
         
@@ -87,17 +73,13 @@ class ProgViewController: UIViewController {
         passwordTextField.headText = "Password"
         passwordTextField.headLabel.font = UIFont.defaultFont(ofSize: 13.0, for: .medium)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: placeholderAttributes)
-        passwordTextField.baseColor = .pallette6
+        passwordTextField.baseLineColor = .pallette6
         passwordTextField.alertColor = .pallette7
         passwordTextField.alertLabel.font = UIFont.defaultFont(ofSize: 12.0, for: .medium)
         passwordTextField.font = UIFont.defaultFont(ofSize: 16.0, for: .medium)
         passwordTextField.textColor = .pallette3
         passwordTextField.returnKeyType = .go
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.baseLinePadding = CGPoint(x: 0, y: 10.0)
-        passwordTextField.textFieldAreaPadding = CGPoint(x: 0, y: 10.0)
-        passwordTextField.alertLabelPadding = CGPoint(x: 0, y: 5.0)
-        passwordTextField.hideAlertWhenDidEndEditingPassValidation = true
         passwordTextField.hideHeadWhenTextFieldIsEmpty = true
         
         

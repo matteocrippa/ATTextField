@@ -15,7 +15,6 @@
 		68371B551EC5B654005139D4 /* StoryboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68371B501EC5B654005139D4 /* StoryboardViewController.swift */; };
 		68371B561EC5B654005139D4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68371B511EC5B654005139D4 /* UIColor.swift */; };
 		68371B571EC5B654005139D4 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68371B521EC5B654005139D4 /* UIFont.swift */; };
-		68371B5B1EC5B696005139D4 /* ATEmptyCriteriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68371B5A1EC5B696005139D4 /* ATEmptyCriteriable.swift */; };
 		68371B5E1EC5BAEB005139D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68371B5C1EC5BAEB005139D4 /* Main.storyboard */; };
 		E37E429A0AC9DF9FCF02269E /* Pods_ATTextField_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDC85636C5ACA8048126F00 /* Pods_ATTextField_Example.framework */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		68371B501EC5B654005139D4 /* StoryboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardViewController.swift; sourceTree = "<group>"; };
 		68371B511EC5B654005139D4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		68371B521EC5B654005139D4 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		68371B5A1EC5B696005139D4 /* ATEmptyCriteriable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATEmptyCriteriable.swift; sourceTree = "<group>"; };
 		68371B5D1EC5BAEB005139D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78919F61A29B58E73CE028E6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8DA5FB1E8A3F907E73060EEF /* Pods-ATTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATTextField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ATTextField_Example/Pods-ATTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				68371B4F1EC5B654005139D4 /* ProgViewController.swift */,
 				68371B501EC5B654005139D4 /* StoryboardViewController.swift */,
 				68371B5C1EC5BAEB005139D4 /* Main.storyboard */,
-				68371B5A1EC5B696005139D4 /* ATEmptyCriteriable.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -287,7 +284,6 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				68371B551EC5B654005139D4 /* StoryboardViewController.swift in Sources */,
 				68371B571EC5B654005139D4 /* UIFont.swift in Sources */,
-				68371B5B1EC5B696005139D4 /* ATEmptyCriteriable.swift in Sources */,
 				68371B531EC5B654005139D4 /* MainViewController.swift in Sources */,
 				68371B541EC5B654005139D4 /* ProgViewController.swift in Sources */,
 				68371B561EC5B654005139D4 /* UIColor.swift in Sources */,

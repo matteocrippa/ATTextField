@@ -15,13 +15,6 @@ class StoryboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // configure rules for validation
-        var criteria = ATEmptyCriteria()
-        criteria.textField = textField
-        let validator = ATValidator(criterias: [criteria])
-        textField.validator = validator
-        
         // for hiding keyboard 
         addGestureRecognizer()
     }
@@ -32,7 +25,7 @@ class StoryboardViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        textField.validate(withAnimation: true)
+        textField.showAlert(withText: "Alert message", withAnimation: true)
     }
     
     @objc private func hideKeyboard(gesture: UIGestureRecognizer?) {

@@ -11,31 +11,26 @@ import UIKit
 @IBDesignable
 open class ATTextField: UITextField {
     
+
+    private var headLabelHeight: CGFloat {
+        return headLabel.intrinsicContentSize.height
+    }
+    
+    private var textFieldViewHeight: CGFloat {
+        return super.intrinsicContentSize.height
+    }
+    
+    private var baselineHeight: CGFloat = 1.0
+    
+    private var alertLabelHeight: CGFloat {
+        return alertLabel.intrinsicContentSize.height
+    }
+    
+    //
     public private(set) var headLabel: UILabel!
-    public private(set) var baseLineLayer: CALayer!
+    public private(set) var baseLineView: UIView!
     public private(set) var alertLabel: UILabel!
-    
-    open var headLabelPadding        = CGPoint(x: 0.0, y: 0.0)
-    open var alertLabelPadding       = CGPoint(x: 0.0, y: 0.0)
-    open var textFieldAreaPadding    = CGPoint(x: 0.0, y: 0.0)
-    open var baseLinePadding         = CGPoint(x: 0.0, y: 0.0)
-    
-    open var validator: ATValidatoring?
-    open var baseLineHeight: CGFloat = 1.0
-    
-    private var textFieldAreaFrame: CGRect = .zero
-    
-    private var textLineHeight: CGFloat {
-        return font!.lineHeight.rounded(.up)
-    }
-    
-    @IBInspectable open var showAlertWhenInvalid: Bool = true {
-        didSet {
-            updateAlertLabelProperties()
-        }
-    }
-    
-    @IBInspectable open var hideAlertWhenDidEndEditingPassValidation: Bool = true
+    public private(set) var textFieldView: UIView!
     
     @IBInspectable open var hideHeadWhenTextFieldIsEmpty: Bool = false {
         didSet {
@@ -57,19 +52,7 @@ open class ATTextField: UITextField {
         }
     }
     
-    @IBInspectable open var headTextAlignment: Int = 0 {
-        didSet {
-            updateHeadLabelProperties()
-        }
-    }
-    
-    @IBInspectable open var baseColor: UIColor = .black  {
-        didSet {
-            updateBaseLineProperties()
-        }
-    }
-    
-    @IBInspectable open var baseCornerRadius: CGFloat = 1.0  {
+    @IBInspectable open var baseLineColor: UIColor = .black  {
         didSet {
             updateBaseLineProperties()
         }
@@ -82,12 +65,6 @@ open class ATTextField: UITextField {
     }
     
     @IBInspectable open var alertColor: UIColor = .red  {
-        didSet {
-            updateAlertLabelProperties()
-        }
-    }
-    
-    @IBInspectable open var alertTextAlignment: Int = 0 {
         didSet {
             updateAlertLabelProperties()
         }
@@ -107,6 +84,7 @@ open class ATTextField: UITextField {
     
     private func prepareTextField() {
         addHeadLabel()
+        addTextFieldView()
         addBaseLineLayer()
         addAlertLabel()
         stylizeTextField()
@@ -114,46 +92,12 @@ open class ATTextField: UITextField {
     
     // MARK: - Overriding
     
-    override open func layoutSubviews() {
-        layoutHeadLabel()
-        updateTextFieldAreaFrame()
-        layoutBaseLine()
-        layoutAlertLabel()
-        super.layoutSubviews()
-    }
-    
-    func sizeToFitLabels() {
-        if let headText = headLabel.text, headText.isEmpty == false {
-            headLabel.sizeToFit()
-        }
-        if let alertText = alertLabel.text, alertText.isEmpty == false {
-            alertLabel.sizeToFit()
-        }
-    }
-    
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return boundsForTextFieldArea(of: bounds)
+        return textViewRect(forBounds: bounds)
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return boundsForTextFieldArea(of: bounds)
-    }
-    
-    override open var intrinsicContentSize: CGSize {
-        let maxWidth = max(headLabel.intrinsicContentSize.width, alertLabel.intrinsicContentSize.width, super.intrinsicContentSize.width)
-        let maxXPadding = [headLabelPadding.x, textFieldAreaPadding.x, baseLinePadding.x, alertLabelPadding.x].max()!
-        var width = maxWidth + maxXPadding
-        
-        let headLabelHeight = headLabelPadding.y + headLabel.font.lineHeight.rounded(.up)
-        let textFieldAreaHeight = textFieldAreaPadding.y + frameOfTextFieldArea(for: bounds).height
-        let baselineHeight = baseLinePadding.y + baseLineHeight
-        let alertLabelHeight = alertLabelPadding.y + alertLabel.font.lineHeight.rounded(.up)
-        var height = headLabelHeight + textFieldAreaHeight + baselineHeight + alertLabelHeight
-        
-        width = max(width, 25.0)
-        height = max(height, 30.0)
-        
-        return CGSize(width: width, height: height)
+        return textViewRect(forBounds: bounds)
     }
     
     override open func willMove(toSuperview newSuperview: UIView?) {
@@ -165,56 +109,88 @@ open class ATTextField: UITextField {
         }
     }
     
+    override open var intrinsicContentSize: CGSize {
+        var width: CGFloat = max(headLabel.intrinsicContentSize.width, alertLabel.intrinsicContentSize.width, super.intrinsicContentSize.width)
+        var height: CGFloat = headLabelHeight + textFieldViewHeight + baselineHeight + alertLabelHeight
+        width = max(width, 25.0)
+        height = max(height, 30.0)
+        return CGSize(width: width, height: height)
+    }
+
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         alertLabel.alpha = 1.0
         borderStyle = .none
     }
     
-    // MARK: - Layout subviews
+    // MARK: - Methods
     
-    private func layoutHeadLabel() {
-        let x = headLabelPadding.x
-        let y = headLabelPadding.y
-        let width = bounds.width - x
-        let height = headLabel.font.lineHeight
-        headLabel.frame = CGRect(x: x, y: y, width: width, height: height)
+    private func addHeadLabel() {
+        headLabel = UILabel()
+        headLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(headLabel)
+        configureVisibilityHeadLabel()
+        
+        headLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        headLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        headLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
-    private func layoutBaseLine() {
-        baseLineLayer.frame = frameForNextView(of: textFieldAreaFrame, withHeight: baseLineHeight, withPadding: baseLinePadding)
+    private func addTextFieldView() {
+        textFieldView = UIView()
+        textFieldView.isUserInteractionEnabled = false
+        textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(textFieldView)
+        
+        textFieldView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        textFieldView.topAnchor.constraint(equalTo: headLabel.bottomAnchor).isActive = true
+        textFieldView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
-    private func layoutAlertLabel() {
-        alertLabel.frame = frameForNextView(of: baseLineLayer.frame, withHeight: alertLabel.font.lineHeight, withPadding: alertLabelPadding)
+    private func addBaseLineLayer() {
+        baseLineView = UIView()
+        baseLineView.isUserInteractionEnabled = false
+        baseLineView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(baseLineView)
+        baseLineView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        baseLineView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor).isActive = true
+        baseLineView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        baseLineView.heightAnchor.constraint(equalToConstant: baselineHeight).isActive = true
     }
     
-    private func frameForNextView(of previuosFrame: CGRect, withHeight height: CGFloat, withPadding padding: CGPoint) -> CGRect {
-        let prevX = previuosFrame.origin.x
-        let prevY = previuosFrame.origin.y + previuosFrame.height
-        let x = padding.x + prevX
-        let y = padding.y + prevY
-        let width = bounds.width - x
-        return CGRect(x: x, y: y, width: width, height: height )
+    private func addAlertLabel() {
+        alertLabel = UILabel()
+        alertLabel.alpha = 0.0
+        alertLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(alertLabel)
+        
+        alertLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        alertLabel.topAnchor.constraint(equalTo: baseLineView.bottomAnchor).isActive = true
+        alertLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        alertLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    private func updateTextFieldAreaFrame() {
-        textFieldAreaFrame = frameOfTextFieldArea(for: bounds)
+    private func stylizeTextField() {
+        borderStyle = .none
     }
     
-    private func frameOfTextFieldArea(for bounds: CGRect) -> CGRect {
-        guard let headLabel = headLabel else { return .zero }
-        let textFieldAreaHeight = textLineHeight
-        let newBounds = frameForNextView(of: headLabel.frame, withHeight: textFieldAreaHeight, withPadding: textFieldAreaPadding)
-        return newBounds
+    private func textViewRect(forBounds bounds: CGRect) -> CGRect {
+        guard let textFieldView = textFieldView else { return .zero }
+        var rect = bounds
+        rect.origin.y -= (bounds.height / 2.0) - (textFieldView.frame.origin.y + textFieldView.frame.height / 2.0)
+        return rect
     }
     
-    private func boundsForTextFieldArea(of bounds: CGRect) -> CGRect {
-        var newBounds = frameOfTextFieldArea(for: bounds)
-        let centerY = (bounds.height / 2.0 - textLineHeight / 2.0).rounded(.up)
-        newBounds.origin.y -= centerY
-        newBounds.size = bounds.size
-        return newBounds
+    private func configureVisibilityHeadLabel() {
+        if let text = text {
+            if text.isEmpty, hideHeadWhenTextFieldIsEmpty {
+                hide(view: headLabel, withAnimation: false)
+            } else {
+                show(view: headLabel, withAnimation: false)
+            }
+        } else {
+            hide(view: headLabel, withAnimation: false)
+        }
     }
     
     // MARK: - UITextField Observing
@@ -225,41 +201,9 @@ open class ATTextField: UITextField {
     }
     
     @objc private func textFieldDidEndEditing() {
-        if hideHeadWhenTextFieldIsEmpty && (self.text == nil || text!.isEmpty) {
+        if hideHeadWhenTextFieldIsEmpty && (text == nil || text!.isEmpty) {
             hide(view: headLabel, withAnimation: true)
         }
-        if hideAlertWhenDidEndEditingPassValidation {
-            let result = validate(forceExit: true)
-            switch result {
-            case .valid?:
-                hideAlert(withAnimation: true)
-            default:
-                break
-            }
-        }
-    }
-    
-    // MARK: - Validation
-    
-    open func validate(forceExit: Bool) -> ATValidatorResult? {
-        guard let validator = validator else { return nil}
-        return validator.isValid(forceExit: forceExit)
-    }
-    
-    @discardableResult
-    open func validate(withAnimation animation: Bool) -> ATValidatorResult?  {
-        guard let result = validate(forceExit: true), showAlertWhenInvalid else { return nil }
-        switch result {
-        case .valid:
-            hideAlert(withAnimation: animation)
-        case .notValid(let criteria):
-            let text = criteria.error?.localizedDescription ?? ""
-            showAlert(withText: text, withAnimation: animation)
-        case .notValides(let criterias):
-            let text = criterias.first?.error?.localizedDescription ?? ""
-            showAlert(withText: text, withAnimation: animation)
-        }
-        return result
     }
     
     // MARK: - Animation
@@ -268,24 +212,24 @@ open class ATTextField: UITextField {
         alertText = text
         if animation == false {
             alertLabel.alpha = 1.0
-            self.baseLineLayer.backgroundColor = alertLabel.textColor.cgColor
+            self.baseLineView.backgroundColor = alertLabel.textColor
             return
         }
         UIView.animate(withDuration: 0.3) {
             self.alertLabel.alpha = 1.0
-            self.baseLineLayer.backgroundColor = self.alertLabel.textColor.cgColor
+            self.baseLineView.backgroundColor = self.alertLabel.textColor
         }
     }
     
     open func hideAlert(withAnimation animation: Bool = false) {
         if animation == false {
             alertLabel.alpha = 0.0
-            self.baseLineLayer.backgroundColor = baseColor.cgColor
+            self.baseLineView.backgroundColor = baseLineColor
             return
         }
         UIView.animate(withDuration: 0.3) {
             self.alertLabel.alpha = 0.0
-            self.baseLineLayer.backgroundColor = self.baseColor.cgColor
+            self.baseLineView.backgroundColor = self.baseLineColor
         }
     }
     
@@ -309,82 +253,19 @@ open class ATTextField: UITextField {
         }
     }
     
-    // MARK: - Methods
-    
-    private func addHeadLabel() {
-        headLabel = UILabel()
-        configureVisibilityHeadLabel()
-        addSubview(headLabel)
-    }
-    
-    private func addBaseLineLayer() {
-        baseLineLayer = CALayer()
-        layer.addSublayer(baseLineLayer)
-    }
-    
-    private func addAlertLabel() {
-        alertLabel = UILabel()
-        alertLabel.alpha = 0.0
-        addSubview(alertLabel)
-    }
-    
-    private func stylizeTextField() {
-        borderStyle = .none
-    }
-    
-    private func configureVisibilityHeadLabel() {
-        if let text = text {
-            if text.isEmpty, hideHeadWhenTextFieldIsEmpty {
-                hide(view: headLabel, withAnimation: false)
-            } else {
-                show(view: headLabel, withAnimation: false)
-            }
-        } else {
-            hide(view: headLabel, withAnimation: false)
-        }
-    }
-    
     // MARK: - @IBInspectable updates
     
     private func updateHeadLabelProperties() {
         headLabel.textColor = headColor
         headLabel.text = headText
-        switch headTextAlignment {
-        case let textAlignment where 0...2 ~= textAlignment:
-            headLabel.textAlignment = NSTextAlignment(rawValue: textAlignment)!
-        default:
-            break
-        }
-        if hideHeadWhenTextFieldIsEmpty, hasText == false {
-            hide(view: headLabel, withAnimation: false)
-        }
-        sizeToFitLabels()
-        invalidateIntrinsicContentSize()
-        setNeedsLayout()
     }
     
     private func updateBaseLineProperties() {
-        baseLineLayer.backgroundColor = baseColor.cgColor
-        baseLineLayer.cornerRadius = baseCornerRadius
-        sizeToFitLabels()
-        invalidateIntrinsicContentSize()
-        setNeedsLayout()
+        baseLineView.backgroundColor = baseLineColor
     }
     
     private func updateAlertLabelProperties() {
         alertLabel.textColor = alertColor
         alertLabel.text = alertText
-        switch alertTextAlignment {
-        case let textAlignment where 0...2 ~= textAlignment:
-            alertLabel.textAlignment = NSTextAlignment(rawValue: textAlignment)!
-        default:
-            break
-        }
-        if showAlertWhenInvalid, let validate = validate(forceExit: true), validate.boolValue == false {
-            show(view: alertLabel, withAnimation: false)
-        }
-        sizeToFitLabels()
-        invalidateIntrinsicContentSize()
-        setNeedsLayout()
     }
 }

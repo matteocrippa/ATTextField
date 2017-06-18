@@ -7,19 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F8151D1260142ACCB0EB403E9E040A5 /* ATTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25620376ABA1E5E0129E3EBFBE25619 /* ATTextField.swift */; };
 		1A08CB16523F22B64367AEC922FFBFD3 /* Pods-ATTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36730863CE7B6BAF2E3304372CDDCE84 /* Pods-ATTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F408890721596F64B36D0DC8E68DFC2 /* ATValidatoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7317E93FED032843A0C2B1D22E7BE085 /* ATValidatoring.swift */; };
-		5C4DFD893A460A250390BAD403DFEBCA /* ATValidatorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF040412B3CA3C84E11371EA860C284E /* ATValidatorResult.swift */; };
 		63EB9D8901A741F6F02D7D2DF7F6067A /* Pods-ATTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB2F0353D9CE150AE07A9AAB2BDB25E /* Pods-ATTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66479D8DC0D3C236922276683C5FAC13 /* Pods-ATTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFBF2B81E1908209BED1892684F2481 /* Pods-ATTextField_Example-dummy.m */; };
+		682CB8BE1EF6A1BD0027FE7B /* ATTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */; };
 		A265BA85326A343C8FA0E9FC1568BC9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		A7FD16145682FC2D1EF4AF2D952442B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B39DB81D8798C60AF5F8CE89EA9E7F5E /* ATTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB91C700E1EB018F36A2C43710644FAC /* ATTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B91C477629FB81EE3FD387506FEE0915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		BE7C4E4ABFDDCB79D2B17ABDDC5BDCE8 /* ATValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29881354EF47908C168E546F8C0B72 /* ATValidator.swift */; };
 		CC248455CEFE74B68358F96A8B55729F /* ATTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B8C910DF0EF75C1F106DE4F8D2050 /* ATTextField-dummy.m */; };
-		D506A9E8F36E2C5D07D0DF6A968893A8 /* ATCriteriable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092628147F46FBE486A6D122D8BAFFF3 /* ATCriteriable.swift */; };
 		D9A307E9F5FC10BC994639F886640994 /* Pods-ATTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD914835CBE5022CD18739FEDA9611 /* Pods-ATTextField_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -34,41 +30,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		092628147F46FBE486A6D122D8BAFFF3 /* ATCriteriable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATCriteriable.swift; sourceTree = "<group>"; };
 		2312B1638B5486B1D2EAC41BCDCB981A /* Pods-ATTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ATTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2EFCF8B62E0615D5E6D8EE512BBACF4A /* Pods-ATTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		36730863CE7B6BAF2E3304372CDDCE84 /* Pods-ATTextField_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ATTextField_Tests-umbrella.h"; sourceTree = "<group>"; };
-		378CEF698364CB6323DFF3BA5B449D26 /* Pods-ATTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ATTextField_Tests.modulemap"; sourceTree = "<group>"; };
+		378CEF698364CB6323DFF3BA5B449D26 /* Pods-ATTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ATTextField_Tests.modulemap"; sourceTree = "<group>"; };
 		4B618E6A4155EDD5F27974977CCFBFDA /* Pods-ATTextField_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ATTextField_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		549B8C910DF0EF75C1F106DE4F8D2050 /* ATTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ATTextField-dummy.m"; sourceTree = "<group>"; };
 		561B474EE340C5139B983C3326C58529 /* ATTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTextField-prefix.pch"; sourceTree = "<group>"; };
 		57818923A8F34AFEBEC2E14CBA944867 /* Pods-ATTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		58FB8BD66533192C65A7B2FE86D886C0 /* ATTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ATTextField.modulemap; sourceTree = "<group>"; };
+		58FB8BD66533192C65A7B2FE86D886C0 /* ATTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ATTextField.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		70AB68EDC8D74CFDC6BDF51BB8C8A01C /* Pods_ATTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ATTextField_Tests.framework; path = "Pods-ATTextField_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7317E93FED032843A0C2B1D22E7BE085 /* ATValidatoring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATValidatoring.swift; sourceTree = "<group>"; };
+		682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATTextField.swift; sourceTree = "<group>"; };
+		70AB68EDC8D74CFDC6BDF51BB8C8A01C /* Pods_ATTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732305A5A6DE9B20B1DF9856C696E970 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ATTextField.xcconfig; sourceTree = "<group>"; };
 		75AF28196144C0603ACD16271632992E /* Pods-ATTextField_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-resources.sh"; sourceTree = "<group>"; };
 		770E189C28AF15CD7CA8E827536F6F8A /* Pods-ATTextField_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-frameworks.sh"; sourceTree = "<group>"; };
-		7A863A5FE70D05272AC6DA7C5FE97F38 /* Pods-ATTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ATTextField_Example.modulemap"; sourceTree = "<group>"; };
+		7A863A5FE70D05272AC6DA7C5FE97F38 /* Pods-ATTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ATTextField_Example.modulemap"; sourceTree = "<group>"; };
 		7C4AA56FE9A88B82839DF2F0FAE964C6 /* Pods-ATTextField_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ATTextField_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7E5A7115B701900FA1C988B286FEDC2F /* Pods-ATTextField_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8084184C61563D317E80DBC232B13E45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		960A8992E043FF797DE148B9DBA65EDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EE83A4E673945B60D7834311CDA2550 /* Pods-ATTextField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ATTextField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A74DCE552F4F6B889B33439297DB3100 /* Pods-ATTextField_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Tests-resources.sh"; sourceTree = "<group>"; };
-		AF29881354EF47908C168E546F8C0B72 /* ATValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATValidator.swift; sourceTree = "<group>"; };
 		AFBD914835CBE5022CD18739FEDA9611 /* Pods-ATTextField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ATTextField_Tests-dummy.m"; sourceTree = "<group>"; };
 		BB91C700E1EB018F36A2C43710644FAC /* ATTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTextField-umbrella.h"; sourceTree = "<group>"; };
 		BEB2F0353D9CE150AE07A9AAB2BDB25E /* Pods-ATTextField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ATTextField_Example-umbrella.h"; sourceTree = "<group>"; };
-		C795A6643FFF666FE0EEF867AD88BBCB /* ATTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ATTextField.framework; path = ATTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C795A6643FFF666FE0EEF867AD88BBCB /* ATTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ATTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA56CFB785BD68631567B5367D1A3 /* Pods-ATTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DDFBF2B81E1908209BED1892684F2481 /* Pods-ATTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ATTextField_Example-dummy.m"; sourceTree = "<group>"; };
-		E25620376ABA1E5E0129E3EBFBE25619 /* ATTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTextField.swift; sourceTree = "<group>"; };
-		ED8D7854B7BB26EECB9D8A7B8CCAC507 /* Pods_ATTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ATTextField_Example.framework; path = "Pods-ATTextField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF040412B3CA3C84E11371EA860C284E /* ATValidatorResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATValidatorResult.swift; sourceTree = "<group>"; };
+		ED8D7854B7BB26EECB9D8A7B8CCAC507 /* Pods_ATTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEFAE0F6007FBCAFE9BD36F66C44030 /* Pods-ATTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,13 +143,8 @@
 		D0F5A80675ED1C787F299D987B3BE1CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				092628147F46FBE486A6D122D8BAFFF3 /* ATCriteriable.swift */,
-				E25620376ABA1E5E0129E3EBFBE25619 /* ATTextField.swift */,
-				AF29881354EF47908C168E546F8C0B72 /* ATValidator.swift */,
-				7317E93FED032843A0C2B1D22E7BE085 /* ATValidatoring.swift */,
-				EF040412B3CA3C84E11371EA860C284E /* ATValidatorResult.swift */,
+				682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -232,7 +219,6 @@
 			children = (
 				D0F5A80675ED1C787F299D987B3BE1CD /* Classes */,
 			);
-			name = ATTextField;
 			path = ATTextField;
 			sourceTree = "<group>";
 		};
@@ -326,6 +312,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					54EB1D30B21CAF72DFB5816508735107 = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -359,12 +350,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D506A9E8F36E2C5D07D0DF6A968893A8 /* ATCriteriable.swift in Sources */,
+				682CB8BE1EF6A1BD0027FE7B /* ATTextField.swift in Sources */,
 				CC248455CEFE74B68358F96A8B55729F /* ATTextField-dummy.m in Sources */,
-				0F8151D1260142ACCB0EB403E9E040A5 /* ATTextField.swift in Sources */,
-				BE7C4E4ABFDDCB79D2B17ABDDC5BDCE8 /* ATValidator.swift in Sources */,
-				3F408890721596F64B36D0DC8E68DFC2 /* ATValidatoring.swift in Sources */,
-				5C4DFD893A460A250390BAD403DFEBCA /* ATValidatorResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -407,7 +395,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -498,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -578,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -667,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -682,7 +671,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
