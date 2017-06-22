@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 open class ATTextField: UITextField {
     
-
+    
     private var headLabelHeight: CGFloat {
         return headLabel.intrinsicContentSize.height
     }
@@ -38,6 +38,12 @@ open class ATTextField: UITextField {
         }
     }
     
+    @IBInspectable open var highlightBaseLineWhenActive: Bool = false  {
+        didSet {
+            updateBaseLineProperties()
+        }
+    }
+    
     // MARK: - @IBInspectables
     
     @IBInspectable open var headText: String? = "Head" {
@@ -53,6 +59,12 @@ open class ATTextField: UITextField {
     }
     
     @IBInspectable open var baseLineColor: UIColor = .black  {
+        didSet {
+            updateBaseLineProperties()
+        }
+    }
+    
+    @IBInspectable open var highlightedBaseLineColor: UIColor = .blue  {
         didSet {
             updateBaseLineProperties()
         }
@@ -116,7 +128,7 @@ open class ATTextField: UITextField {
         height = max(height, 30.0)
         return CGSize(width: width, height: height)
     }
-
+    
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         alertLabel.alpha = 1.0
@@ -196,11 +208,13 @@ open class ATTextField: UITextField {
     // MARK: - UITextField Observing
     
     @objc private func textFieldDidBeginEditing() {
+        highlightBaseLine(true, withAnimation: true)
         guard let text = self.text, text.isEmpty else { return }
         show(view: headLabel, withAnimation: true)
     }
     
     @objc private func textFieldDidEndEditing() {
+        highlightBaseLine(false, withAnimation: true)
         if hideHeadWhenTextFieldIsEmpty && (text == nil || text!.isEmpty) {
             hide(view: headLabel, withAnimation: true)
         }
@@ -250,6 +264,18 @@ open class ATTextField: UITextField {
         }
         UIView.animate(withDuration: 0.3) {
             view.alpha = 0.0
+        }
+    }
+    
+    private func highlightBaseLine(_ highlight: Bool, withAnimation animation: Bool = false) {
+        guard highlightBaseLineWhenActive == true, alertLabel.alpha == 0.0 else { return }
+        let color = highlight ? highlightedBaseLineColor : baseLineColor
+        if animation == false {
+            baseLineView.backgroundColor = color
+            return
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.baseLineView.backgroundColor = color
         }
     }
     
