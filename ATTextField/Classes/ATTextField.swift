@@ -208,13 +208,17 @@ open class ATTextField: UITextField {
     // MARK: - UITextField Observing
     
     @objc private func textFieldDidBeginEditing() {
-        highlightBaseLine(true, withAnimation: true)
+        if highlightBaseLineWhenActive {
+            highlightBaseLine(highlight: true, withAnimation: true)
+        }
         guard let text = self.text, text.isEmpty else { return }
         show(view: headLabel, withAnimation: true)
     }
     
     @objc private func textFieldDidEndEditing() {
-        highlightBaseLine(false, withAnimation: true)
+        if highlightBaseLineWhenActive {
+            highlightBaseLine(highlight: false, withAnimation: true)
+        }
         if hideHeadWhenTextFieldIsEmpty && (text == nil || text!.isEmpty) {
             hide(view: headLabel, withAnimation: true)
         }
@@ -267,9 +271,9 @@ open class ATTextField: UITextField {
         }
     }
     
-    private func highlightBaseLine(_ highlight: Bool, withAnimation animation: Bool = false) {
-        guard highlightBaseLineWhenActive == true, alertLabel.alpha == 0.0 else { return }
+    private func highlightBaseLine(highlight: Bool, withAnimation animation: Bool = false) {
         let color = highlight ? highlightedBaseLineColor : baseLineColor
+        guard color != baseLineView.backgroundColor else { return }
         if animation == false {
             baseLineView.backgroundColor = color
             return

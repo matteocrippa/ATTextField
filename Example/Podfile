@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'ATTextField_Example' do
   pod 'ATTextField', :path => '../'
-
-  target 'ATTextField_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

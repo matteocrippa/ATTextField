@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A08CB16523F22B64367AEC922FFBFD3 /* Pods-ATTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36730863CE7B6BAF2E3304372CDDCE84 /* Pods-ATTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63EB9D8901A741F6F02D7D2DF7F6067A /* Pods-ATTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB2F0353D9CE150AE07A9AAB2BDB25E /* Pods-ATTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66479D8DC0D3C236922276683C5FAC13 /* Pods-ATTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFBF2B81E1908209BED1892684F2481 /* Pods-ATTextField_Example-dummy.m */; };
-		682CB8BE1EF6A1BD0027FE7B /* ATTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */; };
-		A265BA85326A343C8FA0E9FC1568BC9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A7FD16145682FC2D1EF4AF2D952442B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		B39DB81D8798C60AF5F8CE89EA9E7F5E /* ATTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB91C700E1EB018F36A2C43710644FAC /* ATTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20399B9E0D2BDA31A6FB62E143DC308F /* ATTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD359120F60F99B44136256B2B6B5B /* ATTextField.swift */; };
+		2D6CF21844DC069EA3C20A483BA56E9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		63EB9D8901A741F6F02D7D2DF7F6067A /* Pods-ATTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D134E6CF9C331E3D28F04B540022A93 /* Pods-ATTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66479D8DC0D3C236922276683C5FAC13 /* Pods-ATTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE882423D995469406740FA548AD416 /* Pods-ATTextField_Example-dummy.m */; };
+		B63A787F1C831E987FAFF55D74AD5888 /* ATTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B8C910DF0EF75C1F106DE4F8D2050 /* ATTextField-dummy.m */; };
 		B91C477629FB81EE3FD387506FEE0915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CC248455CEFE74B68358F96A8B55729F /* ATTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B8C910DF0EF75C1F106DE4F8D2050 /* ATTextField-dummy.m */; };
-		D9A307E9F5FC10BC994639F886640994 /* Pods-ATTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBD914835CBE5022CD18739FEDA9611 /* Pods-ATTextField_Tests-dummy.m */; };
+		DBF297EEE717A9DA8C75D23EC8219711 /* ATTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB91C700E1EB018F36A2C43710644FAC /* ATTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,44 +21,33 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 54EB1D30B21CAF72DFB5816508735107;
+			remoteGlobalIDString = F6F57FA2D51F2E6D5BBB10568EEFD705;
 			remoteInfo = ATTextField;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2312B1638B5486B1D2EAC41BCDCB981A /* Pods-ATTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ATTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		2EFCF8B62E0615D5E6D8EE512BBACF4A /* Pods-ATTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		36730863CE7B6BAF2E3304372CDDCE84 /* Pods-ATTextField_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ATTextField_Tests-umbrella.h"; sourceTree = "<group>"; };
-		378CEF698364CB6323DFF3BA5B449D26 /* Pods-ATTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ATTextField_Tests.modulemap"; sourceTree = "<group>"; };
-		4B618E6A4155EDD5F27974977CCFBFDA /* Pods-ATTextField_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ATTextField_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		01A5F13D8809226339B6F739BF3B6248 /* Pods-ATTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2EE882423D995469406740FA548AD416 /* Pods-ATTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ATTextField_Example-dummy.m"; sourceTree = "<group>"; };
+		46CD359120F60F99B44136256B2B6B5B /* ATTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ATTextField.swift; sourceTree = "<group>"; };
 		549B8C910DF0EF75C1F106DE4F8D2050 /* ATTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ATTextField-dummy.m"; sourceTree = "<group>"; };
 		561B474EE340C5139B983C3326C58529 /* ATTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTextField-prefix.pch"; sourceTree = "<group>"; };
-		57818923A8F34AFEBEC2E14CBA944867 /* Pods-ATTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		58FB8BD66533192C65A7B2FE86D886C0 /* ATTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ATTextField.modulemap; sourceTree = "<group>"; };
+		58FB8BD66533192C65A7B2FE86D886C0 /* ATTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ATTextField.modulemap; sourceTree = "<group>"; };
+		5D134E6CF9C331E3D28F04B540022A93 /* Pods-ATTextField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ATTextField_Example-umbrella.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATTextField.swift; sourceTree = "<group>"; };
-		70AB68EDC8D74CFDC6BDF51BB8C8A01C /* Pods_ATTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732305A5A6DE9B20B1DF9856C696E970 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ATTextField.xcconfig; sourceTree = "<group>"; };
-		75AF28196144C0603ACD16271632992E /* Pods-ATTextField_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-resources.sh"; sourceTree = "<group>"; };
-		770E189C28AF15CD7CA8E827536F6F8A /* Pods-ATTextField_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-frameworks.sh"; sourceTree = "<group>"; };
-		7A863A5FE70D05272AC6DA7C5FE97F38 /* Pods-ATTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ATTextField_Example.modulemap"; sourceTree = "<group>"; };
-		7C4AA56FE9A88B82839DF2F0FAE964C6 /* Pods-ATTextField_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ATTextField_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7E5A7115B701900FA1C988B286FEDC2F /* Pods-ATTextField_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		8084184C61563D317E80DBC232B13E45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		960A8992E043FF797DE148B9DBA65EDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EE83A4E673945B60D7834311CDA2550 /* Pods-ATTextField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ATTextField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A74DCE552F4F6B889B33439297DB3100 /* Pods-ATTextField_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Tests-resources.sh"; sourceTree = "<group>"; };
-		AFBD914835CBE5022CD18739FEDA9611 /* Pods-ATTextField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ATTextField_Tests-dummy.m"; sourceTree = "<group>"; };
+		772D841522ED21FAA6E1CC96A41F6DEF /* ATTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ATTextField.framework; path = ATTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5083C1A666A010CAD9ECE23471051B /* Pods-ATTextField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ATTextField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8BB755683894CFD67A504407247CE5EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93F789256A44841B244CE941226085E9 /* Pods_ATTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ATTextField_Example.framework; path = "Pods-ATTextField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AB0BB319B1AFE319BF60C1B12137F3 /* Pods-ATTextField_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B5B27F8A564527703FD7EEE83ACDEB70 /* Pods-ATTextField_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ATTextField_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		BB91C700E1EB018F36A2C43710644FAC /* ATTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ATTextField-umbrella.h"; sourceTree = "<group>"; };
-		BEB2F0353D9CE150AE07A9AAB2BDB25E /* Pods-ATTextField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ATTextField_Example-umbrella.h"; sourceTree = "<group>"; };
-		C795A6643FFF666FE0EEF867AD88BBCB /* ATTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ATTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0ACA56CFB785BD68631567B5367D1A3 /* Pods-ATTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DDFBF2B81E1908209BED1892684F2481 /* Pods-ATTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ATTextField_Example-dummy.m"; sourceTree = "<group>"; };
-		ED8D7854B7BB26EECB9D8A7B8CCAC507 /* Pods_ATTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ATTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFEFAE0F6007FBCAFE9BD36F66C44030 /* Pods-ATTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CFCBE08F6C73F15B20E96DFE27724864 /* Pods-ATTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ATTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DC432FA78474215FDA04BFA2D1E510AB /* Pods-ATTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ATTextField_Example.modulemap"; sourceTree = "<group>"; };
+		F405EA00399158EE3BEE31C0495898CC /* Pods-ATTextField_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ATTextField_Example-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,52 +59,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56226AF5BFF9B86F38440B98E12CD076 /* Frameworks */ = {
+		ADE83BD2AF6A16FEE317BC7539CA9143 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A265BA85326A343C8FA0E9FC1568BC9D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFEC376738FD70B14EAB342A049F4071 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A7FD16145682FC2D1EF4AF2D952442B0 /* Foundation.framework in Frameworks */,
+				2D6CF21844DC069EA3C20A483BA56E9B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		055AC42592DE539C75C6947F2CCCB516 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				772D841522ED21FAA6E1CC96A41F6DEF /* ATTextField.framework */,
+				93F789256A44841B244CE941226085E9 /* Pods_ATTextField_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34ECDE5722581D68791EA1CF2979F4CA /* ATTextField */ = {
+			isa = PBXGroup;
+			children = (
+				4C548F5089CFBCC6F2BDF142CA6099D9 /* Classes */,
+			);
+			name = ATTextField;
+			path = ATTextField;
+			sourceTree = "<group>";
+		};
 		3659C489D7678CBDDCB7382C10EC8CD1 /* ATTextField */ = {
 			isa = PBXGroup;
 			children = (
-				F9763D0434C6A895C72FC4ABD091E715 /* ATTextField */,
+				34ECDE5722581D68791EA1CF2979F4CA /* ATTextField */,
 				DCA9B40A0B694B07BBACA1B15FE1F70E /* Support Files */,
 			);
 			name = ATTextField;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		561B96A9F9A6480655727A726218779C /* Targets Support Files */ = {
+		4C548F5089CFBCC6F2BDF142CA6099D9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F1681F9171B37BA0F394FFF7DB710C9D /* Pods-ATTextField_Example */,
-				D5398E6FCC9B89E96D35ED6F7DC13609 /* Pods-ATTextField_Tests */,
+				46CD359120F60F99B44136256B2B6B5B /* ATTextField.swift */,
 			);
-			name = "Targets Support Files";
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		6DB1642F5AA89D8045B3D8906A20C65F /* Products */ = {
+		4E6FDFE78E0F454163AB34267E655C13 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C795A6643FFF666FE0EEF867AD88BBCB /* ATTextField.framework */,
-				ED8D7854B7BB26EECB9D8A7B8CCAC507 /* Pods_ATTextField_Example.framework */,
-				70AB68EDC8D74CFDC6BDF51BB8C8A01C /* Pods_ATTextField_Tests.framework */,
+				872041C019AF3C20CC71C09B3D16459C /* Pods-ATTextField_Example */,
 			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -127,9 +121,27 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				E0E8C1C93DA0948EF7F428DE9E491CDA /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6DB1642F5AA89D8045B3D8906A20C65F /* Products */,
-				561B96A9F9A6480655727A726218779C /* Targets Support Files */,
+				055AC42592DE539C75C6947F2CCCB516 /* Products */,
+				4E6FDFE78E0F454163AB34267E655C13 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		872041C019AF3C20CC71C09B3D16459C /* Pods-ATTextField_Example */ = {
+			isa = PBXGroup;
+			children = (
+				8BB755683894CFD67A504407247CE5EA /* Info.plist */,
+				DC432FA78474215FDA04BFA2D1E510AB /* Pods-ATTextField_Example.modulemap */,
+				7F5083C1A666A010CAD9ECE23471051B /* Pods-ATTextField_Example-acknowledgements.markdown */,
+				B5B27F8A564527703FD7EEE83ACDEB70 /* Pods-ATTextField_Example-acknowledgements.plist */,
+				2EE882423D995469406740FA548AD416 /* Pods-ATTextField_Example-dummy.m */,
+				95AB0BB319B1AFE319BF60C1B12137F3 /* Pods-ATTextField_Example-frameworks.sh */,
+				F405EA00399158EE3BEE31C0495898CC /* Pods-ATTextField_Example-resources.sh */,
+				5D134E6CF9C331E3D28F04B540022A93 /* Pods-ATTextField_Example-umbrella.h */,
+				01A5F13D8809226339B6F739BF3B6248 /* Pods-ATTextField_Example.debug.xcconfig */,
+				CFCBE08F6C73F15B20E96DFE27724864 /* Pods-ATTextField_Example.release.xcconfig */,
+			);
+			name = "Pods-ATTextField_Example";
+			path = "Target Support Files/Pods-ATTextField_Example";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -140,38 +152,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D0F5A80675ED1C787F299D987B3BE1CD /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				682CB8BD1EF6A1BD0027FE7B /* ATTextField.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		D5398E6FCC9B89E96D35ED6F7DC13609 /* Pods-ATTextField_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				960A8992E043FF797DE148B9DBA65EDA /* Info.plist */,
-				378CEF698364CB6323DFF3BA5B449D26 /* Pods-ATTextField_Tests.modulemap */,
-				7C4AA56FE9A88B82839DF2F0FAE964C6 /* Pods-ATTextField_Tests-acknowledgements.markdown */,
-				2312B1638B5486B1D2EAC41BCDCB981A /* Pods-ATTextField_Tests-acknowledgements.plist */,
-				AFBD914835CBE5022CD18739FEDA9611 /* Pods-ATTextField_Tests-dummy.m */,
-				7E5A7115B701900FA1C988B286FEDC2F /* Pods-ATTextField_Tests-frameworks.sh */,
-				A74DCE552F4F6B889B33439297DB3100 /* Pods-ATTextField_Tests-resources.sh */,
-				36730863CE7B6BAF2E3304372CDDCE84 /* Pods-ATTextField_Tests-umbrella.h */,
-				57818923A8F34AFEBEC2E14CBA944867 /* Pods-ATTextField_Tests.debug.xcconfig */,
-				D0ACA56CFB785BD68631567B5367D1A3 /* Pods-ATTextField_Tests.release.xcconfig */,
-			);
-			name = "Pods-ATTextField_Tests";
-			path = "Target Support Files/Pods-ATTextField_Tests";
 			sourceTree = "<group>";
 		};
 		DCA9B40A0B694B07BBACA1B15FE1F70E /* Support Files */ = {
@@ -196,32 +182,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		F1681F9171B37BA0F394FFF7DB710C9D /* Pods-ATTextField_Example */ = {
-			isa = PBXGroup;
-			children = (
-				8084184C61563D317E80DBC232B13E45 /* Info.plist */,
-				7A863A5FE70D05272AC6DA7C5FE97F38 /* Pods-ATTextField_Example.modulemap */,
-				9EE83A4E673945B60D7834311CDA2550 /* Pods-ATTextField_Example-acknowledgements.markdown */,
-				4B618E6A4155EDD5F27974977CCFBFDA /* Pods-ATTextField_Example-acknowledgements.plist */,
-				DDFBF2B81E1908209BED1892684F2481 /* Pods-ATTextField_Example-dummy.m */,
-				770E189C28AF15CD7CA8E827536F6F8A /* Pods-ATTextField_Example-frameworks.sh */,
-				75AF28196144C0603ACD16271632992E /* Pods-ATTextField_Example-resources.sh */,
-				BEB2F0353D9CE150AE07A9AAB2BDB25E /* Pods-ATTextField_Example-umbrella.h */,
-				2EFCF8B62E0615D5E6D8EE512BBACF4A /* Pods-ATTextField_Example.debug.xcconfig */,
-				EFEFAE0F6007FBCAFE9BD36F66C44030 /* Pods-ATTextField_Example.release.xcconfig */,
-			);
-			name = "Pods-ATTextField_Example";
-			path = "Target Support Files/Pods-ATTextField_Example";
-			sourceTree = "<group>";
-		};
-		F9763D0434C6A895C72FC4ABD091E715 /* ATTextField */ = {
-			isa = PBXGroup;
-			children = (
-				D0F5A80675ED1C787F299D987B3BE1CD /* Classes */,
-			);
-			path = ATTextField;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -233,42 +193,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1A0D0A418D355ACE53474BC9FC62C31 /* Headers */ = {
+		CC9ECD1B1E9BBBC99EC65DDFC4232A07 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A08CB16523F22B64367AEC922FFBFD3 /* Pods-ATTextField_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0B5945D5A2D6D5FDCCA424EBE1BD5E5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B39DB81D8798C60AF5F8CE89EA9E7F5E /* ATTextField-umbrella.h in Headers */,
+				DBF297EEE717A9DA8C75D23EC8219711 /* ATTextField-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		54EB1D30B21CAF72DFB5816508735107 /* ATTextField */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 69EDEDD54E11ACD7C1E567FD93967DB1 /* Build configuration list for PBXNativeTarget "ATTextField" */;
-			buildPhases = (
-				987603BEAE791513B6A31345DF494BF1 /* Sources */,
-				56226AF5BFF9B86F38440B98E12CD076 /* Frameworks */,
-				D0B5945D5A2D6D5FDCCA424EBE1BD5E5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ATTextField;
-			productName = ATTextField;
-			productReference = C795A6643FFF666FE0EEF867AD88BBCB /* ATTextField.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		A018487DA6869134DFE9FA92CB3D5BA2 /* Pods-ATTextField_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E174B05FC784BCEDB7180972EC66B69 /* Build configuration list for PBXNativeTarget "Pods-ATTextField_Example" */;
@@ -284,24 +219,24 @@
 			);
 			name = "Pods-ATTextField_Example";
 			productName = "Pods-ATTextField_Example";
-			productReference = ED8D7854B7BB26EECB9D8A7B8CCAC507 /* Pods_ATTextField_Example.framework */;
+			productReference = 93F789256A44841B244CE941226085E9 /* Pods_ATTextField_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BB99A906A562AE399ADDC7D30E58E170 /* Pods-ATTextField_Tests */ = {
+		F6F57FA2D51F2E6D5BBB10568EEFD705 /* ATTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B24A09363F83ED554122EDCC220EAAAC /* Build configuration list for PBXNativeTarget "Pods-ATTextField_Tests" */;
+			buildConfigurationList = 28A96429E93CED002681A7EA842039A0 /* Build configuration list for PBXNativeTarget "ATTextField" */;
 			buildPhases = (
-				C43C8CBDEEBBD29A2AAA10606D2324B8 /* Sources */,
-				BFEC376738FD70B14EAB342A049F4071 /* Frameworks */,
-				B1A0D0A418D355ACE53474BC9FC62C31 /* Headers */,
+				0FA61E9EA87D14725DCC8DB30BE2EFDE /* Sources */,
+				ADE83BD2AF6A16FEE317BC7539CA9143 /* Frameworks */,
+				CC9ECD1B1E9BBBC99EC65DDFC4232A07 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-ATTextField_Tests";
-			productName = "Pods-ATTextField_Tests";
-			productReference = 70AB68EDC8D74CFDC6BDF51BB8C8A01C /* Pods_ATTextField_Tests.framework */;
+			name = ATTextField;
+			productName = ATTextField;
+			productReference = 772D841522ED21FAA6E1CC96A41F6DEF /* ATTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -312,11 +247,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					54EB1D30B21CAF72DFB5816508735107 = {
-						LastSwiftMigration = 0830;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -326,13 +256,12 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 6DB1642F5AA89D8045B3D8906A20C65F /* Products */;
+			productRefGroup = 055AC42592DE539C75C6947F2CCCB516 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54EB1D30B21CAF72DFB5816508735107 /* ATTextField */,
+				F6F57FA2D51F2E6D5BBB10568EEFD705 /* ATTextField */,
 				A018487DA6869134DFE9FA92CB3D5BA2 /* Pods-ATTextField_Example */,
-				BB99A906A562AE399ADDC7D30E58E170 /* Pods-ATTextField_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,20 +275,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		987603BEAE791513B6A31345DF494BF1 /* Sources */ = {
+		0FA61E9EA87D14725DCC8DB30BE2EFDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				682CB8BE1EF6A1BD0027FE7B /* ATTextField.swift in Sources */,
-				CC248455CEFE74B68358F96A8B55729F /* ATTextField-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C43C8CBDEEBBD29A2AAA10606D2324B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9A307E9F5FC10BC994639F886640994 /* Pods-ATTextField_Tests-dummy.m in Sources */,
+				B63A787F1C831E987FAFF55D74AD5888 /* ATTextField-dummy.m in Sources */,
+				20399B9E0D2BDA31A6FB62E143DC308F /* ATTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,84 +290,13 @@
 		0A2363A591255E46E540B150901885DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ATTextField;
-			target = 54EB1D30B21CAF72DFB5816508735107 /* ATTextField */;
+			target = F6F57FA2D51F2E6D5BBB10568EEFD705 /* ATTextField */;
 			targetProxy = 516E2A2A19167E1F8F609762855733BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		23B8B308A3164373E0EFF7611D489BA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ATTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2F26CFA6713C25136AAC9BBBE747403E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0ACA56CFB785BD68631567B5367D1A3 /* Pods-ATTextField_Tests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ATTextField_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ATTextField_Tests/Pods-ATTextField_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ATTextField_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		345CC476DF4A7516DBD2220CF5035FF3 /* Debug */ = {
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -494,9 +344,9 @@
 			};
 			name = Debug;
 		};
-		541FD8A1684C5764263694823AE15D94 /* Debug */ = {
+		89DF9219E58F0F6B4CBF0F115226095C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57818923A8F34AFEBEC2E14CBA944867 /* Pods-ATTextField_Tests.debug.xcconfig */;
+			baseConfigurationReference = 01A5F13D8809226339B6F739BF3B6248 /* Pods-ATTextField_Example.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -510,27 +360,99 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ATTextField_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-ATTextField_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ATTextField_Tests/Pods-ATTextField_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-ATTextField_Example/Pods-ATTextField_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ATTextField_Tests;
+				PRODUCT_NAME = Pods_ATTextField_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+		929ADF8949D69B33707DBA059B01EC4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ATTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A0AE37E9809C15A89B8562F61A34E398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ATTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -574,9 +496,9 @@
 			};
 			name = Release;
 		};
-		97D237F410EA0FD30289AD9E1C4FDFF6 /* Release */ = {
+		FF7E5566B2A5EDD6119566A0C643F786 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFEFAE0F6007FBCAFE9BD36F66C44030 /* Pods-ATTextField_Example.release.xcconfig */;
+			baseConfigurationReference = CFCBE08F6C73F15B20E96DFE27724864 /* Pods-ATTextField_Example.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -592,7 +514,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-ATTextField_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ATTextField_Example/Pods-ATTextField_Example.modulemap";
@@ -612,98 +534,23 @@
 			};
 			name = Release;
 		};
-		ABB6C7E17389862913EDB35C6B36FE1F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EFCF8B62E0615D5E6D8EE512BBACF4A /* Pods-ATTextField_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ATTextField_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ATTextField_Example/Pods-ATTextField_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ATTextField_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F67B736882732E433CB96E6EC9FAAE27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7533FAAFAC070377F6EC20B7B17F3790 /* ATTextField.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ATTextField/ATTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ATTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ATTextField/ATTextField.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ATTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		28A96429E93CED002681A7EA842039A0 /* Build configuration list for PBXNativeTarget "ATTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				345CC476DF4A7516DBD2220CF5035FF3 /* Debug */,
-				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+				929ADF8949D69B33707DBA059B01EC4E /* Debug */,
+				A0AE37E9809C15A89B8562F61A34E398 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69EDEDD54E11ACD7C1E567FD93967DB1 /* Build configuration list for PBXNativeTarget "ATTextField" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F67B736882732E433CB96E6EC9FAAE27 /* Debug */,
-				23B8B308A3164373E0EFF7611D489BA0 /* Release */,
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -711,17 +558,8 @@
 		8E174B05FC784BCEDB7180972EC66B69 /* Build configuration list for PBXNativeTarget "Pods-ATTextField_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ABB6C7E17389862913EDB35C6B36FE1F /* Debug */,
-				97D237F410EA0FD30289AD9E1C4FDFF6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B24A09363F83ED554122EDCC220EAAAC /* Build configuration list for PBXNativeTarget "Pods-ATTextField_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				541FD8A1684C5764263694823AE15D94 /* Debug */,
-				2F26CFA6713C25136AAC9BBBE747403E /* Release */,
+				89DF9219E58F0F6B4CBF0F115226095C /* Debug */,
+				FF7E5566B2A5EDD6119566A0C643F786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
