@@ -141,7 +141,6 @@ open class ATTextField: UITextField {
         headLabel = UILabel()
         headLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headLabel)
-        configureVisibilityHeadLabel()
         
         headLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         headLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -288,10 +287,21 @@ open class ATTextField: UITextField {
     private func updateHeadLabelProperties() {
         headLabel.textColor = headColor
         headLabel.text = headText
+        
+        if let text = text {
+            if text.isEmpty, hideHeadWhenTextFieldIsEmpty {
+                hide(view: headLabel, withAnimation: false)
+            } else {
+                show(view: headLabel, withAnimation: false)
+            }
+        } else {
+            hide(view: headLabel, withAnimation: false)
+        }
     }
     
     private func updateBaseLineProperties() {
-        baseLineView.backgroundColor = baseLineColor
+        let color = highlightBaseLineWhenActive && isEditing ? highlightedBaseLineColor : baseLineColor
+        baseLineView.backgroundColor = color
     }
     
     private func updateAlertLabelProperties() {

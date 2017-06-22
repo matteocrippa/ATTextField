@@ -89,6 +89,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="alertColor">
                                         <color key="value" red="1" green="0.2123372228" blue="0.072893620719999996" alpha="0.88487566019999997" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightBaseLineWhenActive" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u38-Gr-gGP">

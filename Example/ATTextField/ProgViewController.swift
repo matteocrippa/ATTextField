@@ -67,7 +67,7 @@ class ProgViewController: UIViewController {
         emailTextField.returnKeyType = .next
         emailTextField.autocorrectionType = .no
         emailTextField.hideHeadWhenTextFieldIsEmpty = true
-        
+        emailTextField.highlightBaseLineWhenActive = true
         
         passwordTextField.headColor = .pallette5
         passwordTextField.headText = "Password"
@@ -81,7 +81,7 @@ class ProgViewController: UIViewController {
         passwordTextField.returnKeyType = .go
         passwordTextField.isSecureTextEntry = true
         passwordTextField.hideHeadWhenTextFieldIsEmpty = true
-        
+        passwordTextField.highlightBaseLineWhenActive = true
         
         layoutTextFields()
     }
