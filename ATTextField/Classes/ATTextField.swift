@@ -25,7 +25,6 @@ open class ATTextField: UITextField {
         return alertLabel.intrinsicContentSize.height
     }
     
-    //
     public private(set) var headLabel: UILabel!
     public private(set) var baseLineView: UIView!
     public private(set) var alertLabel: UILabel!
@@ -138,7 +137,6 @@ open class ATTextField: UITextField {
     
     private func addHeadLabel() {
         headLabel = UILabel()
-        headLabel.backgroundColor = .blue
         headLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headLabel)
         
@@ -149,7 +147,6 @@ open class ATTextField: UITextField {
     
     private func addTextFieldView() {
         textFieldView = UIView()
-        textFieldView.backgroundColor = .lightGray
         textFieldView.isUserInteractionEnabled = false
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textFieldView)
@@ -172,7 +169,6 @@ open class ATTextField: UITextField {
     
     private func addAlertLabel() {
         alertLabel = UILabel()
-        alertLabel.backgroundColor = .purple
         alertLabel.alpha = 0.0
         alertLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(alertLabel)
@@ -188,7 +184,7 @@ open class ATTextField: UITextField {
     }
     
     private func textViewRect(forBounds bounds: CGRect) -> CGRect {
-        guard let textFieldView = textFieldView else { return .zero }
+        guard let textFieldView = textFieldView else { return super.textRect(forBounds: bounds) }
         var rect = bounds
         rect.origin.y -= (bounds.height / 2.0) - (textFieldView.frame.origin.y + textFieldView.frame.height / 2.0)
         return rect
