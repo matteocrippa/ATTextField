@@ -52,10 +52,10 @@ class ProgViewController: UIViewController {
         
         emailTextField.headColor = .pallette5
         emailTextField.headText = "E-mail"
-        emailTextField.headLabel.font = UIFont.defaultFont(ofSize: 13.0, for: .medium)
+        emailTextField.headLabel.font = UIFont.defaultFont(ofSize: 33.0, for: .medium)
         let placeholderAttributes = [
-            NSForegroundColorAttributeName: UIColor.pallette3.withAlphaComponent(0.6),
-            NSFontAttributeName : UIFont.defaultFont(ofSize: 16.0, for: .medium)
+            NSAttributedStringKey.foregroundColor: UIColor.pallette3.withAlphaComponent(0.6),
+            NSAttributedStringKey.font : UIFont.defaultFont(ofSize: 16.0, for: .medium)
         ]
         emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: placeholderAttributes)
         emailTextField.baseLineColor = .pallette6

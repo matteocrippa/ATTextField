@@ -11,7 +11,6 @@ import UIKit
 @IBDesignable
 open class ATTextField: UITextField {
     
-    
     private var headLabelHeight: CGFloat {
         return headLabel.intrinsicContentSize.height
     }
@@ -139,6 +138,7 @@ open class ATTextField: UITextField {
     
     private func addHeadLabel() {
         headLabel = UILabel()
+        headLabel.backgroundColor = .blue
         headLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headLabel)
         
@@ -149,6 +149,7 @@ open class ATTextField: UITextField {
     
     private func addTextFieldView() {
         textFieldView = UIView()
+        textFieldView.backgroundColor = .lightGray
         textFieldView.isUserInteractionEnabled = false
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textFieldView)
@@ -171,6 +172,7 @@ open class ATTextField: UITextField {
     
     private func addAlertLabel() {
         alertLabel = UILabel()
+        alertLabel.backgroundColor = .purple
         alertLabel.alpha = 0.0
         alertLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(alertLabel)

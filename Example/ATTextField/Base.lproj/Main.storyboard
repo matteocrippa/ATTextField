@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yRO-Jd-qIk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yRO-Jd-qIk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="106" y="254" width="163" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctz-MK-BBH">
-                                        <rect key="frame" x="23" y="0.0" width="118" height="80"/>
+                                        <rect key="frame" x="22.5" y="0.0" width="118" height="80"/>
                                         <state key="normal" title="Using storyboard"/>
                                         <connections>
                                             <segue destination="eOS-KH-RQ7" kind="show" id="e2F-Uw-6AI"/>
@@ -69,31 +69,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IpR-LE-okS" customClass="ATTextField" customModule="ATTextField">
-                                <rect key="frame" x="16" y="104.5" width="343" height="59"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="headText" value="Email"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="headColor">
-                                        <color key="value" red="0.28627450980000002" green="0.72549019609999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headTextAlignment">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="alertText" value="Invalid email"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="alertColor">
-                                        <color key="value" red="1" green="0.2123372228" blue="0.072893620719999996" alpha="0.88487566019999997" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightBaseLineWhenActive" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u38-Gr-gGP">
-                                <rect key="frame" x="16" y="211.5" width="343" height="50"/>
+                                <rect key="frame" x="16" y="209" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.39607843139999999" green="0.52941176469999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6ek-0I-GZL"/>
@@ -105,19 +82,53 @@
                                     <action selector="loginButtonTapped:" destination="eOS-KH-RQ7" eventType="touchUpInside" id="Wki-ol-eWV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hsa-Wa-YaJ" customClass="ATTextField" customModule="ATTextField">
+                                <rect key="frame" x="16" y="112" width="343" height="77"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headColor">
+                                        <color key="value" red="0.27450980390000002" green="0.65098039220000004" blue="0.031835937500000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="baseLineColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.1294084821" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedBaseLineColor">
+                                        <color key="value" red="0.27450980390000002" green="0.65098039220000004" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="alertText" value="Alert"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="alertColor">
+                                        <color key="value" red="0.8862745098" green="0.25490196079999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headText" value="Heading"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-xK-b3v" customClass="ATTextField" customModule="ATTextField">
+                                <rect key="frame" x="16" y="378" width="343" height="38.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headText" value="HHH"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IpR-LE-okS" firstAttribute="leading" secondItem="dda-hz-vw4" secondAttribute="leadingMargin" id="Bw9-xE-9gJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IpR-LE-okS" secondAttribute="trailing" id="Mmh-EF-cVy"/>
-                            <constraint firstItem="u38-Gr-gGP" firstAttribute="trailing" secondItem="IpR-LE-okS" secondAttribute="trailing" id="Pdn-AS-YZd"/>
-                            <constraint firstItem="u38-Gr-gGP" firstAttribute="top" secondItem="IpR-LE-okS" secondAttribute="bottom" constant="48" id="fXG-pE-T1t"/>
-                            <constraint firstItem="u38-Gr-gGP" firstAttribute="leading" secondItem="IpR-LE-okS" secondAttribute="leading" id="o8X-KV-31d"/>
-                            <constraint firstItem="IpR-LE-okS" firstAttribute="centerY" secondItem="dda-hz-vw4" secondAttribute="centerY" multiplier="0.4" id="owX-Z5-5Lt"/>
+                            <constraint firstItem="nVx-xK-b3v" firstAttribute="trailing" secondItem="u38-Gr-gGP" secondAttribute="trailing" id="4yi-rS-c4Q"/>
+                            <constraint firstItem="u38-Gr-gGP" firstAttribute="trailing" secondItem="Hsa-Wa-YaJ" secondAttribute="trailing" id="6L8-MJ-O9u"/>
+                            <constraint firstItem="u38-Gr-gGP" firstAttribute="top" secondItem="Hsa-Wa-YaJ" secondAttribute="bottom" constant="20" id="9YL-2v-CoI"/>
+                            <constraint firstItem="nVx-xK-b3v" firstAttribute="leading" secondItem="u38-Gr-gGP" secondAttribute="leading" id="AGi-eE-aPK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hsa-Wa-YaJ" secondAttribute="trailing" id="Tei-vs-ROJ"/>
+                            <constraint firstItem="Hsa-Wa-YaJ" firstAttribute="leading" secondItem="dda-hz-vw4" secondAttribute="leadingMargin" id="aB6-xc-GIn"/>
+                            <constraint firstItem="Hsa-Wa-YaJ" firstAttribute="top" secondItem="1WV-Td-Rxc" secondAttribute="bottom" constant="28" id="aji-tm-u7Z"/>
+                            <constraint firstItem="u38-Gr-gGP" firstAttribute="leading" secondItem="Hsa-Wa-YaJ" secondAttribute="leading" id="fLE-Ob-nIG"/>
+                            <constraint firstItem="nVx-xK-b3v" firstAttribute="top" secondItem="u38-Gr-gGP" secondAttribute="bottom" constant="119" id="xXg-DD-Hj5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textField" destination="IpR-LE-okS" id="j4A-gq-ft9"/>
+                        <outlet property="textField" destination="Hsa-Wa-YaJ" id="AxF-yf-N4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6u-sM-gl1" userLabel="First Responder" sceneMemberID="firstResponder"/>

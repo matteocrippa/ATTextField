@@ -24,22 +24,22 @@ extension UIFont {
         
         var fontStyleWeight: CGFloat {
             switch self {
-            case .ultraLight : return UIFontWeightUltraLight
-            case .thin       : return UIFontWeightThin
-            case .light      : return UIFontWeightLight
-            case .regular    : return UIFontWeightRegular
-            case .medium     : return UIFontWeightMedium
-            case .semibold   : return UIFontWeightSemibold
-            case .bold       : return UIFontWeightBold
-            case .heavy      : return UIFontWeightHeavy
-            case .black      : return UIFontWeightBlack
+            case .ultraLight : return UIFont.Weight.ultraLight.rawValue
+            case .thin       : return UIFont.Weight.thin.rawValue
+            case .light      : return UIFont.Weight.light.rawValue
+            case .regular    : return UIFont.Weight.regular.rawValue
+            case .medium     : return UIFont.Weight.medium.rawValue
+            case .semibold   : return UIFont.Weight.semibold.rawValue
+            case .bold       : return UIFont.Weight.bold.rawValue
+            case .heavy      : return UIFont.Weight.heavy.rawValue
+            case .black      : return UIFont.Weight.black.rawValue
             }
         }
         
     }
     
     static func defaultFont(ofSize size: CGFloat, for fontStyle: FontStyle = .regular) -> UIFont {
-        return UIFont.systemFont(ofSize: size, weight: fontStyle.fontStyleWeight)
+        return UIFont.systemFont(ofSize: size, weight: UIFont.Weight(rawValue: fontStyle.fontStyleWeight))
     }
     
 }

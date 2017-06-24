@@ -15,7 +15,10 @@ class StoryboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // for hiding keyboard 
+        // for hiding keyboard
+        textField.headLabel.font = UIFont.systemFont(ofSize: 30.0)
+        textField.alertLabel.font = UIFont.systemFont(ofSize: 30.0)
+        textField.font = UIFont.systemFont(ofSize: 35.0)
         addGestureRecognizer()
     }
     
