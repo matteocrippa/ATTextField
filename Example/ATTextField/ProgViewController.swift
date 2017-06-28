@@ -40,6 +40,7 @@ class ProgViewController: UIViewController {
     
     @objc func loginButtonTapped(_ sender: Any) {
         emailTextField.showAlert(withText: "Alert message", withAnimation: true)
+        passwordTextField.showAlert(withText: "Alert", withAnimation: true)
     }
     
     @objc private func hideKeyboard(gesture: UIGestureRecognizer?) {
@@ -89,6 +90,12 @@ class ProgViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.hideHeadWhenTextFieldIsEmpty = true
         passwordTextField.highlightBaseLineWhenActive = true
+        
+        
+//        passwordTextField.hideAlertWhenBecomeActive = true
+        passwordTextField.hideAlertWhenBecomeInactive = true
+//        emailTextField.hideAlertWhenBecomeActive = true
+        
         
         layoutTextFields()
     }

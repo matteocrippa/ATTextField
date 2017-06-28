@@ -11,6 +11,13 @@ import UIKit
 @IBDesignable
 open class ATTextField: UITextField {
     
+    enum ATState {
+        case normal
+        case alert
+    }
+    
+    private var textFieldState: ATState = .normal
+    
     private var headLabelHeight: CGFloat {
         return headLabel.intrinsicContentSize.height
     }
@@ -35,6 +42,9 @@ open class ATTextField: UITextField {
             updateHeadLabelProperties()
         }
     }
+    
+    @IBInspectable open var hideAlertWhenBecomeActive: Bool = false
+    @IBInspectable open var hideAlertWhenBecomeInactive: Bool = false
     
     @IBInspectable open var highlightBaseLineWhenActive: Bool = false  {
         didSet {
@@ -205,38 +215,53 @@ open class ATTextField: UITextField {
     // MARK: - UITextField Observing
     
     @objc private func textFieldDidBeginEditing() {
-        if highlightBaseLineWhenActive {
+        switch textFieldState {
+        case .normal where highlightBaseLineWhenActive:
             highlightBaseLine(highlight: true, withAnimation: true)
+        case .alert where hideAlertWhenBecomeActive:
+            hideAlert(withHighlight: highlightBaseLineWhenActive, withAnimation: true)
+            textFieldState = .normal
+        default:
+            break
         }
         guard let text = self.text, text.isEmpty else { return }
         show(view: headLabel, withAnimation: true)
     }
     
     @objc private func textFieldDidEndEditing() {
-        if highlightBaseLineWhenActive {
+        switch textFieldState {
+        case .normal where highlightBaseLineWhenActive:
             highlightBaseLine(highlight: false, withAnimation: true)
+        case .alert where hideAlertWhenBecomeInactive:
+            hideAlert(withHighlight: false, withAnimation: true)
+            textFieldState = .normal
+        default:
+            break
         }
-        if hideHeadWhenTextFieldIsEmpty && (text == nil || text!.isEmpty) {
-            hide(view: headLabel, withAnimation: true)
-        }
+        guard hideHeadWhenTextFieldIsEmpty, let text = self.text, text.isEmpty else { return }
+        hide(view: headLabel, withAnimation: true)
     }
     
     // MARK: - Animation
     
-    open func showAlert(withText text: String, withAnimation animation: Bool = false) {
+    open func showAlert(withText text: String, withHighlight highlight: Bool = false,  withAnimation animation: Bool = false) {
+        let baseLineColor = highlight ? highlightedBaseLineColor : alertLabel.textColor
         alertText = text
+        textFieldState = .alert
         if animation == false {
             alertLabel.alpha = 1.0
-            self.baseLineView.backgroundColor = alertLabel.textColor
+            self.baseLineView.backgroundColor = baseLineColor
             return
         }
         UIView.animate(withDuration: 0.3) {
             self.alertLabel.alpha = 1.0
-            self.baseLineView.backgroundColor = self.alertLabel.textColor
+            self.baseLineView.backgroundColor = baseLineColor
         }
     }
     
-    open func hideAlert(withAnimation animation: Bool = false) {
+    open func hideAlert(withHighlight highlight: Bool = false, withAnimation animation: Bool = false) {
+        let baseLineColor = highlight ? highlightedBaseLineColor : self.baseLineColor
+        textFieldState = .normal
         if animation == false {
             alertLabel.alpha = 0.0
             self.baseLineView.backgroundColor = baseLineColor
@@ -244,7 +269,7 @@ open class ATTextField: UITextField {
         }
         UIView.animate(withDuration: 0.3) {
             self.alertLabel.alpha = 0.0
-            self.baseLineView.backgroundColor = self.baseLineColor
+            self.baseLineView.backgroundColor = baseLineColor
         }
     }
     
