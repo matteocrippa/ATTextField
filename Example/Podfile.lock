@@ -1,5 +1,5 @@
 PODS:
-  - ATTextField (0.1.4)
+  - ATTextField (0.1.5)
 
 DEPENDENCIES:
   - ATTextField (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ATTextField: dccc9dc779a92cf03e0e2086f2dd62a1f388f825
+  ATTextField: 0cb228f4a81919e4380fe8338ea94479dc859820
 
 PODFILE CHECKSUM: b3205a25daff27084854103b50d0927c2bf52c61
 
