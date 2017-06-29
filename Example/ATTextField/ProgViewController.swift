@@ -43,8 +43,13 @@ class ProgViewController: UIViewController {
         passwordTextField.showAlert(withText: "Alert", withAnimation: true)
         
 //        emailTextField.headLabelEdge.left = 60.0
-        emailTextField.headLabelEdge.right = 20
-//        emailTextField.headLabelEdge.top = 50.0
+        emailTextField.headLabelEdge.top = 20.0
+        emailTextField.textViewEdge.top = 20
+        emailTextField.baseLineEdge.top = 20
+        emailTextField.textViewEdge.left = 10
+        emailTextField.textViewEdge.right = 50
+//        emailTextField.alertLabelEdge.top = 20
+        emailTextField.alertLabelEdge.top = 20.0
     }
     
     @objc private func hideKeyboard(gesture: UIGestureRecognizer?) {

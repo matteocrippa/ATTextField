@@ -90,6 +90,44 @@ open class ATTextField: UITextField {
         }
     }
     
+    public var headLabelEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateHeadLabelConstraints()
+        }
+    }
+    private var headLabelLeadingConstraint: NSLayoutConstraint!
+    private var headLabelTopConstraint: NSLayoutConstraint!
+    private var headLabelTrailingConstraint: NSLayoutConstraint!
+    
+    public var textViewEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateTextViewConstraints()
+        }
+    }
+
+    private var textViewLeadingConstraint: NSLayoutConstraint!
+    private var textViewTopConstraint: NSLayoutConstraint!
+    private var textViewTrailingConstraint: NSLayoutConstraint!
+    
+    public var baseLineEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateBaselineConstraints()
+        }
+    }
+    private var baselineLeadingConstraint: NSLayoutConstraint!
+    private var baselineTopConstraint: NSLayoutConstraint!
+    private var baselineTrailingConstraint: NSLayoutConstraint!
+    
+    public var alertLabelEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateAlertLabelConstraints()
+        }
+    }
+    private var alertLeadingConstraint: NSLayoutConstraint!
+    private var alertTopConstraint: NSLayoutConstraint!
+    private var alertTrailingConstraint: NSLayoutConstraint!
+    private var alertBottomConstraint: NSLayoutConstraint!
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -132,6 +170,7 @@ open class ATTextField: UITextField {
     override open var intrinsicContentSize: CGSize {
         var width: CGFloat = max(headLabel.intrinsicContentSize.width, alertLabel.intrinsicContentSize.width, super.intrinsicContentSize.width)
         var height: CGFloat = headLabelHeight + textFieldViewHeight + baselineHeight + alertLabelHeight
+        height = height + headLabelEdge.top + textViewEdge.top + baseLineEdge.top + alertLabelEdge.top
         width = max(width, 25.0)
         height = max(height, 30.0)
         return CGSize(width: width, height: height)
@@ -144,15 +183,6 @@ open class ATTextField: UITextField {
     }
     
     // MARK: - Methods
-    
-    public var headLabelEdge: UIEdgeInsets = .zero {
-        didSet {
-            updateHeadLabelConstraints()
-        }
-    }
-    private var headLabelLeadingConstraint: NSLayoutConstraint!
-    private var headLabelTopConstraint: NSLayoutConstraint!
-    private var headLabelTrailingConstraint: NSLayoutConstraint!
     
     private func updateHeadLabelConstraints() {
         headLabelLeadingConstraint.constant = headLabelEdge.left
@@ -172,15 +202,6 @@ open class ATTextField: UITextField {
         headLabelTrailingConstraint = trailingAnchor.constraint(equalTo: headLabel.trailingAnchor, constant: headLabelEdge.right)
         NSLayoutConstraint.activate([headLabelLeadingConstraint, headLabelTopConstraint, headLabelTrailingConstraint])
     }
-    
-    public var textViewEdge: UIEdgeInsets = .zero {
-        didSet {
-            updateTextViewConstraints()
-        }
-    }
-    private var textViewLeadingConstraint: NSLayoutConstraint!
-    private var textViewTopConstraint: NSLayoutConstraint!
-    private var textViewTrailingConstraint: NSLayoutConstraint!
     
     private func updateTextViewConstraints() {
         textViewLeadingConstraint.constant = textViewEdge.left
@@ -203,19 +224,10 @@ open class ATTextField: UITextField {
         NSLayoutConstraint.activate([textViewLeadingConstraint, textViewTopConstraint, textViewTrailingConstraint])
     }
     
-    public var baseLineEdge: UIEdgeInsets = .zero {
-        didSet {
-            updateBaselineConstraints()
-        }
-    }
-    private var baselineLeadingConstraint: NSLayoutConstraint!
-    private var baselineTopConstraint: NSLayoutConstraint!
-    private var baselineTrailingConstraint: NSLayoutConstraint!
-    
     private func updateBaselineConstraints() {
         baselineLeadingConstraint.constant = baseLineEdge.left
-        baselineLeadingConstraint.constant = baseLineEdge.top
-        baselineLeadingConstraint.constant = baseLineEdge.right
+        baselineTopConstraint.constant = baseLineEdge.top
+        baselineTrailingConstraint.constant = baseLineEdge.right
         setNeedsLayout()
     }
     
@@ -231,16 +243,6 @@ open class ATTextField: UITextField {
         let baselineHeightContraint = baseLineView.heightAnchor.constraint(equalToConstant: baselineHeight)
         NSLayoutConstraint.activate([baselineLeadingConstraint, baselineTopConstraint, baselineTrailingConstraint, baselineHeightContraint])
     }
-    
-    public var alertLabelEdge: UIEdgeInsets = .zero {
-        didSet {
-            updateAlertLabelConstraints()
-        }
-    }
-    private var alertLeadingConstraint: NSLayoutConstraint!
-    private var alertTopConstraint: NSLayoutConstraint!
-    private var alertTrailingConstraint: NSLayoutConstraint!
-    private var alertBottomConstraint: NSLayoutConstraint!
     
     private func updateAlertLabelConstraints() {
         alertLeadingConstraint.constant = alertLabelEdge.left
@@ -275,6 +277,8 @@ open class ATTextField: UITextField {
         guard let textFieldView = textFieldView else { return super.textRect(forBounds: bounds) }
         var rect = bounds
         rect.origin.y -= (bounds.height / 2.0) - (textFieldView.frame.origin.y + textFieldView.frame.height / 2.0)
+        rect.origin.x = textViewEdge.left
+        rect.size.width -= (textViewEdge.right + textViewEdge.left)
         return rect
     }
     

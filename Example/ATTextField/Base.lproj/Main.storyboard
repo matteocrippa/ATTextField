@@ -103,27 +103,27 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="headText" value="Heading"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-xK-b3v" customClass="ATTextField" customModule="ATTextField">
-                                <rect key="frame" x="16" y="358" width="343" height="38.5"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Textttt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-Rl-5UP" customClass="ATTextField" customModule="ATTextField">
+                                <rect key="frame" x="140" y="304" width="95" height="59"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="headText" value="HHH"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headText" value="Head"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="alertText" value="Alerttttttttttt"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nVx-xK-b3v" firstAttribute="trailing" secondItem="u38-Gr-gGP" secondAttribute="trailing" id="4yi-rS-c4Q"/>
                             <constraint firstItem="u38-Gr-gGP" firstAttribute="trailing" secondItem="Hsa-Wa-YaJ" secondAttribute="trailing" id="6L8-MJ-O9u"/>
                             <constraint firstItem="u38-Gr-gGP" firstAttribute="top" secondItem="Hsa-Wa-YaJ" secondAttribute="bottom" constant="20" id="9YL-2v-CoI"/>
-                            <constraint firstItem="nVx-xK-b3v" firstAttribute="leading" secondItem="u38-Gr-gGP" secondAttribute="leading" id="AGi-eE-aPK"/>
+                            <constraint firstItem="UDq-Rl-5UP" firstAttribute="centerX" secondItem="dda-hz-vw4" secondAttribute="centerX" id="Ndu-C6-Omp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hsa-Wa-YaJ" secondAttribute="trailing" id="Tei-vs-ROJ"/>
                             <constraint firstItem="Hsa-Wa-YaJ" firstAttribute="leading" secondItem="dda-hz-vw4" secondAttribute="leadingMargin" id="aB6-xc-GIn"/>
                             <constraint firstItem="Hsa-Wa-YaJ" firstAttribute="top" secondItem="1WV-Td-Rxc" secondAttribute="bottom" constant="28" id="aji-tm-u7Z"/>
                             <constraint firstItem="u38-Gr-gGP" firstAttribute="leading" secondItem="Hsa-Wa-YaJ" secondAttribute="leading" id="fLE-Ob-nIG"/>
-                            <constraint firstItem="nVx-xK-b3v" firstAttribute="top" secondItem="u38-Gr-gGP" secondAttribute="bottom" constant="119" id="xXg-DD-Hj5"/>
+                            <constraint firstItem="UDq-Rl-5UP" firstAttribute="centerY" secondItem="dda-hz-vw4" secondAttribute="centerY" id="uah-DV-wCt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6u-sM-gl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1596" y="-518"/>
+            <point key="canvasLocation" x="1596" y="-518.59070464767615"/>
         </scene>
         <!--Prog View Controller-->
         <scene sceneID="HI4-m5-lvs">
