@@ -43,8 +43,8 @@ open class ATTextField: UITextField {
         }
     }
     
-    @IBInspectable open var hideAlertWhenBecomeActive: Bool = false
-    @IBInspectable open var hideAlertWhenBecomeInactive: Bool = false
+    open var hideAlertWhenBecomeActive:   Bool = false
+    open var hideAlertWhenBecomeInactive: Bool = false
     
     @IBInspectable open var highlightBaseLineWhenActive: Bool = false  {
         didSet {

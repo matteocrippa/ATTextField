@@ -93,8 +93,8 @@ class ProgViewController: UIViewController {
         
         
 //        passwordTextField.hideAlertWhenBecomeActive = true
-        passwordTextField.hideAlertWhenBecomeInactive = true
-//        emailTextField.hideAlertWhenBecomeActive = true
+//        passwordTextField.hideAlertWhenBecomeInactive = true
+        emailTextField.hideAlertWhenBecomeActive = true
         
         
         layoutTextFields()
