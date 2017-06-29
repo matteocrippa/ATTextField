@@ -145,48 +145,126 @@ open class ATTextField: UITextField {
     
     // MARK: - Methods
     
+    public var headLabelEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateHeadLabelConstraints()
+        }
+    }
+    private var headLabelLeadingConstraint: NSLayoutConstraint!
+    private var headLabelTopConstraint: NSLayoutConstraint!
+    private var headLabelTrailingConstraint: NSLayoutConstraint!
+    
+    private func updateHeadLabelConstraints() {
+        headLabelLeadingConstraint.constant = headLabelEdge.left
+        headLabelTopConstraint.constant = headLabelEdge.top
+        headLabelTrailingConstraint.constant = headLabelEdge.right
+        setNeedsLayout()
+    }
+    
     private func addHeadLabel() {
         headLabel = UILabel()
+        headLabel.backgroundColor = .red
         headLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(headLabel)
         
-        headLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        headLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        headLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        headLabelLeadingConstraint = headLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: headLabelEdge.left)
+        headLabelTopConstraint = headLabel.topAnchor.constraint(equalTo: topAnchor, constant: headLabelEdge.top)
+        headLabelTrailingConstraint = trailingAnchor.constraint(equalTo: headLabel.trailingAnchor, constant: headLabelEdge.right)
+        NSLayoutConstraint.activate([headLabelLeadingConstraint, headLabelTopConstraint, headLabelTrailingConstraint])
+    }
+    
+    public var textViewEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateTextViewConstraints()
+        }
+    }
+    private var textViewLeadingConstraint: NSLayoutConstraint!
+    private var textViewTopConstraint: NSLayoutConstraint!
+    private var textViewTrailingConstraint: NSLayoutConstraint!
+    
+    private func updateTextViewConstraints() {
+        textViewLeadingConstraint.constant = textViewEdge.left
+        textViewTopConstraint.constant = textViewEdge.top
+        textViewTrailingConstraint.constant = textViewEdge.right
+        setNeedsLayout()
     }
     
     private func addTextFieldView() {
         textFieldView = UIView()
+        textFieldView.backgroundColor = .lightGray
         textFieldView.isUserInteractionEnabled = false
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textFieldView)
         
-        textFieldView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        textFieldView.topAnchor.constraint(equalTo: headLabel.bottomAnchor).isActive = true
-        textFieldView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        textViewLeadingConstraint = textFieldView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: textViewEdge.left)
+        textViewTopConstraint = textFieldView.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: textViewEdge.top)
+        textViewTrailingConstraint = trailingAnchor.constraint(equalTo: textFieldView.trailingAnchor, constant: textViewEdge.right)
+        
+        NSLayoutConstraint.activate([textViewLeadingConstraint, textViewTopConstraint, textViewTrailingConstraint])
+    }
+    
+    public var baseLineEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateBaselineConstraints()
+        }
+    }
+    private var baselineLeadingConstraint: NSLayoutConstraint!
+    private var baselineTopConstraint: NSLayoutConstraint!
+    private var baselineTrailingConstraint: NSLayoutConstraint!
+    
+    private func updateBaselineConstraints() {
+        baselineLeadingConstraint.constant = baseLineEdge.left
+        baselineLeadingConstraint.constant = baseLineEdge.top
+        baselineLeadingConstraint.constant = baseLineEdge.right
+        setNeedsLayout()
     }
     
     private func addBaseLineLayer() {
         baseLineView = UIView()
+        baseLineView.backgroundColor = .red
         baseLineView.isUserInteractionEnabled = false
         baseLineView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(baseLineView)
-        baseLineView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        baseLineView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor).isActive = true
-        baseLineView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        baseLineView.heightAnchor.constraint(equalToConstant: baselineHeight).isActive = true
+        baselineLeadingConstraint = baseLineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: baseLineEdge.left)
+        baselineTopConstraint = baseLineView.topAnchor.constraint(equalTo: textFieldView.bottomAnchor, constant: baseLineEdge.top)
+        baselineTrailingConstraint = trailingAnchor.constraint(equalTo: baseLineView.trailingAnchor, constant: baseLineEdge.right)
+        let baselineHeightContraint = baseLineView.heightAnchor.constraint(equalToConstant: baselineHeight)
+        NSLayoutConstraint.activate([baselineLeadingConstraint, baselineTopConstraint, baselineTrailingConstraint, baselineHeightContraint])
+    }
+    
+    public var alertLabelEdge: UIEdgeInsets = .zero {
+        didSet {
+            updateAlertLabelConstraints()
+        }
+    }
+    private var alertLeadingConstraint: NSLayoutConstraint!
+    private var alertTopConstraint: NSLayoutConstraint!
+    private var alertTrailingConstraint: NSLayoutConstraint!
+    private var alertBottomConstraint: NSLayoutConstraint!
+    
+    private func updateAlertLabelConstraints() {
+        alertLeadingConstraint.constant = alertLabelEdge.left
+        alertTopConstraint.constant = alertLabelEdge.top
+        alertTrailingConstraint.constant = alertLabelEdge.right
+        alertBottomConstraint.constant = alertLabelEdge.right
+        setNeedsLayout()
     }
     
     private func addAlertLabel() {
         alertLabel = UILabel()
         alertLabel.alpha = 0.0
+        
+        alertLabel.backgroundColor = .green
+        alertLabel.alpha = 1.0
+        
         alertLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(alertLabel)
         
-        alertLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        alertLabel.topAnchor.constraint(equalTo: baseLineView.bottomAnchor).isActive = true
-        alertLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        alertLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        alertLeadingConstraint = alertLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: alertLabelEdge.left)
+        alertTopConstraint = alertLabel.topAnchor.constraint(equalTo: baseLineView.bottomAnchor, constant: alertLabelEdge.top)
+        alertTrailingConstraint = trailingAnchor.constraint(equalTo: alertLabel.trailingAnchor, constant: alertLabelEdge.right)
+        alertBottomConstraint = alertLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: alertLabelEdge.bottom)
+        NSLayoutConstraint.activate([alertLeadingConstraint, alertTopConstraint, alertTrailingConstraint, alertBottomConstraint])
     }
     
     private func stylizeTextField() {
