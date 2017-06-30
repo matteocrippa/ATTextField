@@ -41,15 +41,6 @@ class ProgViewController: UIViewController {
     @objc func loginButtonTapped(_ sender: Any) {
         emailTextField.showAlert(withText: "Alert message", withAnimation: true)
         passwordTextField.showAlert(withText: "Alert", withAnimation: true)
-        
-//        emailTextField.headLabelEdge.left = 60.0
-        emailTextField.headLabelEdge.top = 20.0
-        emailTextField.textViewEdge.top = 20
-        emailTextField.baseLineEdge.top = 20
-        emailTextField.textViewEdge.left = 10
-        emailTextField.textViewEdge.right = 50
-//        emailTextField.alertLabelEdge.top = 20
-        emailTextField.alertLabelEdge.top = 20.0
     }
     
     @objc private func hideKeyboard(gesture: UIGestureRecognizer?) {
@@ -100,13 +91,24 @@ class ProgViewController: UIViewController {
         passwordTextField.hideHeadWhenTextFieldIsEmpty = true
         passwordTextField.highlightBaseLineWhenActive = true
         
-//        passwordTextField.hideAlertWhenBecomeActive = true
-//        passwordTextField.hideAlertWhenBecomeInactive = true
+
         emailTextField.hideAlertWhenBecomeActive = true
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "water"))
+        emailTextField.rightView = imageView
+        emailTextField.rightViewMode = .always
+        
+        let gaaa = UITapGestureRecognizer(target: self, action: #selector(imageTap(sender:)))
+        imageView.addGestureRecognizer(gaaa)
+        emailTextField.rightView?.backgroundColor = .lightGray
+        emailTextField.rightView?.isUserInteractionEnabled = true
         
         layoutTextFields()
     }
 
+    func imageTap(sender: UIGestureRecognizer) {
+        print(#function)
+    }
+    
     func layoutTextFields() {
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false

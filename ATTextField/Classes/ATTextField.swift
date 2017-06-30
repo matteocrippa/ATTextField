@@ -267,12 +267,23 @@ open class ATTextField: UITextField {
         borderStyle = .none
     }
     
+    open override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        var rect = super.rightViewRect(forBounds: bounds)
+        rect.origin.y -= (bounds.height / 2.0) - (textFieldView.frame.origin.y + textFieldView.frame.height / 2.0)
+        return rect
+    }
+    
     private func textViewRect(forBounds bounds: CGRect) -> CGRect {
         guard let textFieldView = textFieldView else { return super.textRect(forBounds: bounds) }
         var rect = bounds
+        
         rect.origin.y -= (bounds.height / 2.0) - (textFieldView.frame.origin.y + textFieldView.frame.height / 2.0)
         rect.origin.x = textViewEdge.left
         rect.size.width -= (textViewEdge.right + textViewEdge.left)
+        
+        if let rightViewFrame = rightView?.frame {
+            rect.size.width -= rightViewFrame.size.width
+        }
         return rect
     }
     
