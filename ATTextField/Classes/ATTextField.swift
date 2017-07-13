@@ -16,6 +16,12 @@ open class ATTextField: UITextField {
         case alert
     }
     
+    open override var text: String? {
+        didSet {
+            configureVisibilityHeadLabel()
+        }
+    }
+    
     private var textFieldState: ATState = .normal
     
     private var headLabelHeight: CGFloat {
@@ -162,6 +168,7 @@ open class ATTextField: UITextField {
         if let _ = newSuperview {
             NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
             NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: self)
         } else {
             NotificationCenter.default.removeObserver(self)
         }
@@ -300,6 +307,8 @@ open class ATTextField: UITextField {
     }
     
     // MARK: - UITextField Observing
+    
+    @objc private func textFieldDidChange() { }
     
     @objc private func textFieldDidBeginEditing() {
         switch textFieldState {
