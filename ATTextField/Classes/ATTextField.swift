@@ -38,6 +38,8 @@ open class ATTextField: UITextField {
         return alertLabel.intrinsicContentSize.height
     }
     
+    private var isWasFirstResponder: Bool = false
+    
     public private(set) var headLabel: UILabel!
     public private(set) var baseLineView: UIView!
     public private(set) var alertLabel: UILabel!
@@ -187,6 +189,25 @@ open class ATTextField: UITextField {
         super.prepareForInterfaceBuilder()
         alertLabel.alpha = 1.0
         borderStyle = .none
+    }
+    
+    open override var isSecureTextEntry: Bool {
+        willSet {
+            guard #available(iOS 10.0, *) else {
+                isWasFirstResponder = isFirstResponder
+                resignFirstResponder()
+                return
+            }
+        }
+        didSet {
+            guard #available(iOS 10.0, *) else {
+                if isWasFirstResponder {
+                    becomeFirstResponder()
+                    isWasFirstResponder = false
+                }
+                return
+            }
+        }
     }
     
     // MARK: - Methods
