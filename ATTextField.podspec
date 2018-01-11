@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ATTextField'
-  s.version          = '0.1.11'
+  s.version          = '0.1.12'
   s.summary          = 'A subclass on UITextField that provides head, error info with textfield'
 
 # This description is used to generate tags and improve search results.
