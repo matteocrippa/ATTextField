@@ -43,6 +43,8 @@ open class ATTextField: UITextField {
     public private(set) var alertLabel: UILabel!
     public private(set) var textFieldView: UIView!
     
+    private var isWasFirstResponder: Bool = false
+    
     @IBInspectable open var hideHeadWhenTextFieldIsEmpty: Bool = false {
         didSet {
             updateHeadLabelProperties()
@@ -181,6 +183,25 @@ open class ATTextField: UITextField {
         width = max(width, 25.0)
         height = max(height, 30.0)
         return CGSize(width: width, height: height)
+    }
+    
+    override open var isSecureTextEntry: Bool {
+        willSet {
+            guard #available(iOS 10.0, *) else {
+                isWasFirstResponder = isFirstResponder
+                resignFirstResponder()
+                return
+            }
+        }
+        didSet {
+            guard #available(iOS 10.0, *) else {
+                if isWasFirstResponder {
+                    becomeFirstResponder()
+                    isWasFirstResponder = false
+                }
+                return
+            }
+        }
     }
     
     override open func prepareForInterfaceBuilder() {
