@@ -38,12 +38,12 @@ open class ATTextField: UITextField {
         return alertLabel.intrinsicContentSize.height
     }
     
-    private var isWasFirstResponder: Bool = false
-    
     public private(set) var headLabel: UILabel!
     public private(set) var baseLineView: UIView!
     public private(set) var alertLabel: UILabel!
     public private(set) var textFieldView: UIView!
+    
+    private var isWasFirstResponder: Bool = false
     
     @IBInspectable open var hideHeadWhenTextFieldIsEmpty: Bool = false {
         didSet {
@@ -185,13 +185,7 @@ open class ATTextField: UITextField {
         return CGSize(width: width, height: height)
     }
     
-    override open func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        alertLabel.alpha = 1.0
-        borderStyle = .none
-    }
-    
-    open override var isSecureTextEntry: Bool {
+    override open var isSecureTextEntry: Bool {
         willSet {
             guard #available(iOS 10.0, *) else {
                 isWasFirstResponder = isFirstResponder
@@ -208,6 +202,12 @@ open class ATTextField: UITextField {
                 return
             }
         }
+    }
+    
+    override open func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        alertLabel.alpha = 1.0
+        borderStyle = .none
     }
     
     // MARK: - Methods
